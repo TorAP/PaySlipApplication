@@ -15,7 +15,7 @@ public class InformationMenu extends AppCompatActivity {
     }
 
     public void onClickSupplementInfoButton(View view){
-        Intent intent = new Intent(this, SupplementCase.class); //supplement case activity
+        Intent intent = new Intent(this, SupplementInformation.class); //supplement case activity
         startActivity(intent);
     }
 
