@@ -16,8 +16,8 @@ public class MainActivity extends AppCompatActivity {
         }
 
     public void InfoMenuButton(View view){
-        Intent intent = new Intent(this, InformationMenu.class);
-        startActivity(intent);
+       // Intent intent = new Intent(this, InformationMenu.class);
+       // startActivity(intent);
 
 
     }
