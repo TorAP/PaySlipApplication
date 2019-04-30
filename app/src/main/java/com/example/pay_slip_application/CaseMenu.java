@@ -16,8 +16,8 @@ public class CaseMenu extends AppCompatActivity {
     }
 
     public void onClickCase1(View view) {
-        //   Intent intent = new Intent(this, SupplementCase.class);
-        //   startActivity(intent);
+           Intent intent = new Intent(this, SupplementCase.class);
+           startActivity(intent);
     }
 
     public void onClickBack(View view) {
