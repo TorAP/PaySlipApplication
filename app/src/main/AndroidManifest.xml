@@ -20,7 +20,7 @@
         <activity android:name=".CaseMenu" android:screenOrientation="landscape">
 
         </activity>
-        <activity android:name=".SupplementCase"></activity>
+        <activity android:name=".SupplementCase" android:screenOrientation="landscape"></activity>
 
         <meta-data
             android:name="preloaded_fonts"
