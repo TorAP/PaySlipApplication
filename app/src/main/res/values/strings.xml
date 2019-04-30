@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Pay_Slip_Application</string>
+    <string name="infoMenuBackButton">Tilbage</string>
+    <string name="infoMenuTitle">Infomenu Titel</string>
+    <string name="supplementInfoButtonText">Tillæg</string>
+    <string name="supplementInfoImageButton">supplementInfoButton</string>
 </resources>
