@@ -19,7 +19,7 @@
         </activity>
         <activity android:name=".CaseMenu" android:screenOrientation="landscape">
 
-        </activity
+        </activity>
         <activity android:name=".SupplementCase"></activity>
 
         <meta-data
