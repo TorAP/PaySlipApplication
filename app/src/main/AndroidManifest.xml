@@ -17,9 +17,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".CaseMenu" android:screenOrientation="landscape">
-
-        </activity>
+        <activity android:name=".CaseMenu" android:screenOrientation="landscape"></activity>
+        <activity android:name=".InformationMenu" android:screenOrientation="landscape"></activity>
         <activity android:name=".SupplementCase" android:screenOrientation="landscape"></activity>
 
         <meta-data
