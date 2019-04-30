@@ -13,18 +13,18 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        public void InfoMenuButton(View view){
-            Intent intent = new Intent(this, InformationMenu.class);
-            startActivity(intent);
-
-
         }
-        public void CaseMenuButton(View view){
-            Intent intent = new Intent(this, CaseMenu.class);
-            startActivity(intent);
+
+    public void InfoMenuButton(View view){
+        Intent intent = new Intent(this, InformationMenu.class);
+        startActivity(intent);
 
 
-        }
+    }
+    public void CaseMenuButton(View view){
+        Intent intent = new Intent(this, CaseMenu.class);
+        startActivity(intent);
+
     }
 
 }
