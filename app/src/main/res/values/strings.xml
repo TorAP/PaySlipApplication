@@ -3,4 +3,5 @@
     <string name="infoMenuBackButton">Tilbage</string>
     <string name="infoMenuTitle">Infomenu Titel</string>
     <string name="supplementInfoButtonText">Tillæg</string>
+    <string name="supplementInfoImageButton">supplementInfoButton</string>
 </resources>
