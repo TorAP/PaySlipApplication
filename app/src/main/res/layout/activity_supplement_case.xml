@@ -12,6 +12,7 @@
         android:layout_width="0dp"
         android:layout_height="292dp"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="6dp"
         app:layout_constraintBottom_toTopOf="@+id/dragMonth"
@@ -21,6 +22,18 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/payslipone" />
+
+    <Button
+        android:id="@+id/getInfoButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:onClick="onClickInfo"
+        android:text="Info"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/dropName"
@@ -129,6 +142,7 @@
         app:layout_constraintBaseline_toBaselineOf="@+id/dragCpr"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/dragCpr" />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
