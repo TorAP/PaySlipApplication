@@ -37,11 +37,12 @@
         android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"
         android:background="#154677"
+        android:fontFamily="@font/hammersmith_one"
         android:includeFontPadding="false"
         android:onClick="onClickSupplementInformationBackButton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="@string/infoMenuBackButton" />
+        android:text="@string/infoMenuBackButton"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

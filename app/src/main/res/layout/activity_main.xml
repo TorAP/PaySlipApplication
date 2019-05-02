@@ -2,47 +2,56 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@drawable/gradient_background"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/gradient_background"
 
     tools:context=".MainActivity">
 
 
     <Button
-        android:id="@+id/caseMenuButton"
-        android:layout_width="130dp"
+        android:id="@+id/infoMenuButton"
+        android:layout_width="150dp"
         android:layout_height="65dp"
-        android:layout_marginStart="141dp"
-        android:layout_marginLeft="141dp"
-        android:layout_marginEnd="141dp"
-        android:layout_marginRight="141dp"
-        android:layout_marginBottom="220dp"
+        android:layout_marginBottom="64dp"
+        android:background="@color/colorPrimary"
+        android:fontFamily="@font/hammersmith_one"
         android:onClick="InfoMenuButton"
-        android:text="Information"
+        android:text="@string/infoMenuButtonText"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintEnd_toStartOf="@+id/caseMenuButton"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/infoMenuButton"
-        android:layout_width="130dp"
+        android:id="@+id/caseMenuButton"
+        android:layout_width="150dp"
         android:layout_height="65dp"
-        android:layout_marginStart="140dp"
-        android:layout_marginLeft="140dp"
-        android:layout_marginTop="235dp"
-        android:layout_marginEnd="141dp"
-        android:layout_marginRight="141dp"
-        android:layout_marginBottom="33dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="16dp"
+        android:background="@color/colorPrimary"
+        android:fontFamily="@font/hammersmith_one"
         android:onClick="CaseMenuButton"
-        android:text="Opgaver"
-        app:layout_constraintBottom_toTopOf="@+id/caseMenuButton"
+        android:text="@string/caseMenuButtonText"
+        android:textSize="18sp"
+        app:layout_constraintBaseline_toBaselineOf="@id/infoMenuButton"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/infoMenuButton" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.087" />
+        app:srcCompat="@drawable/logo" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

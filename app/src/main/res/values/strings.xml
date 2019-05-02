@@ -4,4 +4,7 @@
     <string name="infoMenuTitle">Infomenu Titel</string>
     <string name="supplementInfoButtonText">Tillæg</string>
     <string name="supplementInfoImageButton">supplementInfoButton</string>
+    <string name="infoMenuButtonText">Information</string>
+    <string name="caseMenuButtonText">Opgaver</string>
+    <string name="caseMenuTitle">Vælg en case</string>
 </resources>
