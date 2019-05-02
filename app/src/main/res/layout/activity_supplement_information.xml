@@ -41,7 +41,7 @@
         android:onClick="onClickSupplementInformationBackButton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="@string/SupplementInformationButton" />
+        tools:text="@string/infoMenuBackButton" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

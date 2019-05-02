@@ -2,8 +2,10 @@ package com.example.pay_slip_application;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.MediaController;
 import android.widget.VideoView;
 
@@ -22,5 +24,9 @@ public class SupplementInformation extends AppCompatActivity {
         MediaController mediaController = new MediaController(this);
         supplementVideo.setMediaController(mediaController);
         mediaController.setAnchorView(supplementVideo);
+    }
+    public void onClickSupplementInformationBackButton(View view){
+        Intent intent = new Intent(this, InformationMenu.class); //Info menu class
+        startActivity(intent);
     }
 }
