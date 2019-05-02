@@ -77,6 +77,7 @@ public class SupplementCase extends AppCompatActivity {
 
     };
 
+    // Callback method that detects different actions of a view being dragged
     View.OnDragListener dragListener = new View.OnDragListener() {
 
         @Override
@@ -86,6 +87,7 @@ public class SupplementCase extends AppCompatActivity {
 
             switch (action) {
 
+                // Controls what happens when a drag is started.
                 case DragEvent.ACTION_DRAG_STARTED:
                     View srcView = (View) event.getLocalState();
                     if (((TextView) v).getText() == "" && (srcView.getTag() != DRAGGER_TAG || srcView.getTag() != v.getTag())) {
@@ -98,17 +100,21 @@ public class SupplementCase extends AppCompatActivity {
                     }
                     return false;
 
+                // Controls what happens when a drag has entered the boundaries of a OnDragListener
                 case DragEvent.ACTION_DRAG_ENTERED:
                     if (((TextView) v).getText() == "") {
                         v.setBackgroundColor(Color.GREEN);
                     }
 
                     return true;
+
+                // Controls what happens when the dragged item is dragged away from the OnDragListener's boundaries
                 case DragEvent.ACTION_DRAG_EXITED:
                     v.setBackgroundColor(Color.YELLOW);
 
                     return true;
 
+                // Controls what happens when a dragged view is dropped on a OnDragListener
                 case DragEvent.ACTION_DROP:
                     // Gets the item containing the dragged data
                     ClipData.Item item = event.getClipData().getItemAt(0);
@@ -118,7 +124,9 @@ public class SupplementCase extends AppCompatActivity {
                     if (((TextView) v).getText() == "") {
                         // Get dragged view object from drag event object.
                         View view = (View) event.getLocalState();
+                        // Delete text of the dragged view
                         ((TextView) view).setText("");
+                        // Set text of the OnDragListener to the dragged data (the text from the dragged view)
                         ((TextView) v).setText(item.getText());
 
                         return true;
@@ -126,6 +134,8 @@ public class SupplementCase extends AppCompatActivity {
                     }
                 case DragEvent.ACTION_DRAG_LOCATION:
                     return true;
+
+                // Resets color when drag is ended
                 case DragEvent.ACTION_DRAG_ENDED:
 
                     v.setBackgroundColor(Color.WHITE);
@@ -135,7 +145,7 @@ public class SupplementCase extends AppCompatActivity {
                     return true;
             }
             return false;
-            }
+        }
 
             /*textView.animate()
                     .x(textView3.getX())
@@ -146,8 +156,7 @@ public class SupplementCase extends AppCompatActivity {
     };
 
 
-
-    public void onClickInfo(View view){
+    public void onClickInfo(View view) {
         Intent intent = new Intent(this, SupplementInformation.class);
         startActivity(intent);
     }

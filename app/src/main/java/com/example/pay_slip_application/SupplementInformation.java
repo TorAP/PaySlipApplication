@@ -36,6 +36,7 @@ public class SupplementInformation extends AppCompatActivity {
         String videoPath = "android.resource://" + getPackageName() + "/" + R.raw.supplementvideo;
         Uri uri = Uri.parse(videoPath);
         supplementVideo.setVideoURI(uri);
+        supplementVideo.start();
 
         MediaController mediaController = new MediaController(this);
         supplementVideo.setMediaController(mediaController);
