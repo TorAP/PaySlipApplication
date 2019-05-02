@@ -32,10 +32,10 @@
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"
+        android:background="#154677"
         android:onClick="onClickInfoMenuBackButton"
         android:text="@string/infoMenuBackButton"
         android:textColor="#ffffff"
-        android:background="#154677"
         app:fontFamily="@font/hammersmith_one"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
