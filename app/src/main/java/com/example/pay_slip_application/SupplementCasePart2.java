@@ -11,7 +11,7 @@ import android.view.DragEvent;
 import android.view.View;
 import android.widget.TextView;
 
-public class SupplementCasePart2 extends AppCompatActivity {
+public class SupplementCasePart2 extends SupplementCase {
 
 
     TextView dragger1, dragger2, dragger3, dragger4, dropper1, dropper2, dropper3, dropper4;

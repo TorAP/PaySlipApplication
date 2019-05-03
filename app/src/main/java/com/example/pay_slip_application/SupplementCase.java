@@ -157,20 +157,20 @@ public class SupplementCase extends AppCompatActivity {
     };
 
 
-    public void onClickInfo(View view){
+    public void onClickInfo(View view) {
         Intent intent = new Intent(this, SupplementInformation.class);
         startActivity(intent);
     }
 
-    public void onClick(View view){
-        Intent intent = new Intent(this,SupplementCasePart2.class);
-  startActivity(intent);
-}
+    public void onClick(View view) {
+        Intent intent = new Intent(this, SupplementCasePart2.class);
+        startActivity(intent);
+    }
 
-    public void onClickIntro(View view){
+    public void onClickIntro(View view) {
         Intent intent = new Intent(this, SupplementCaseIntro.class);
         String message = getResources().getString(R.string.supplementCaseIntro);
-        intent.putExtra(EXTRA_MESSAGE,message);
+        intent.putExtra(EXTRA_MESSAGE, message);
         startActivity(intent);
     }
 
