@@ -11,6 +11,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
+        <activity 
+                  android:name=".SupplementCasePart2"
+                  android:screenOrientation="landscape"/>
         <activity
             android:name=".SupplementCaseIntro"
             android:screenOrientation="landscape"
