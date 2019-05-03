@@ -16,6 +16,7 @@ public class SupplementCase extends AppCompatActivity {
 
     TextView dragger1, dragger2, dragger3, dropper1, dropper2, dropper3;
     private static String DRAGGER_TAG = "Drag";
+    public static final String EXTRA_MESSAGE = "MESSAGE";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -156,13 +157,20 @@ public class SupplementCase extends AppCompatActivity {
     };
 
 
-    public void onClickInfo(View view) {
+    public void onClickInfo(View view){
         Intent intent = new Intent(this, SupplementInformation.class);
         startActivity(intent);
     }
 
     public void onClick(View view){
         Intent intent = new Intent(this,SupplementCasePart2.class);
+  startActivity(intent);
+}
+
+    public void onClickIntro(View view){
+        Intent intent = new Intent(this, SupplementCaseIntro.class);
+        String message = getResources().getString(R.string.supplementCaseIntro);
+        intent.putExtra(EXTRA_MESSAGE,message);
         startActivity(intent);
     }
 

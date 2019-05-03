@@ -7,4 +7,6 @@
     <string name="infoMenuButtonText">Information</string>
     <string name="caseMenuButtonText">Opgaver</string>
     <string name="caseMenuTitle">Vælg en case</string>
+    <string name="supplementCaseIntro">Jimmy Petersen med CPR-nummeret 0110021197 skal til at modtage sin første løn. Han har arbejdet hele august måned og får udbetalt lønnen d. 1. i hver måned.</string>
+    <string name="okayButton">Ok</string>
 </resources>

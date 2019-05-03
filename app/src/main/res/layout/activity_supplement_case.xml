@@ -35,6 +35,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <Button
+        android:id="@+id/introButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:onClick="onClickIntro"
+        android:text="intro"
+        app:layout_constraintEnd_toStartOf="@+id/getInfoButton"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/dropName"
         android:layout_width="92dp"
@@ -151,6 +161,5 @@
         android:text="Button"
         tools:layout_editor_absoluteX="586dp"
         tools:layout_editor_absoluteY="286dp" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
