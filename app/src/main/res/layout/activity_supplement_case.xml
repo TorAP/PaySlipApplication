@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/gradient_background"
     tools:context=".SupplementCase">
 
     <ImageView
@@ -32,6 +33,16 @@
         android:text="Info"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/introButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:onClick="onClickIntro"
+        android:text="intro"
+        app:layout_constraintEnd_toStartOf="@+id/getInfoButton"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -141,7 +152,6 @@
         app:layout_constraintBaseline_toBaselineOf="@+id/dragCpr"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/dragCpr" />
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

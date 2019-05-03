@@ -4,10 +4,8 @@
     <style name="AppTheme" parent="Theme.AppCompat.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">#154677</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
-        <item name="android:background">@drawable/gradient_background</item>
         <item name="android:fontFamily">@font/hammersmith_one</item>
+        <item name="android:orientation">horizontal</item>
     </style>
     
     <style name="PopUpTheme" parent="Theme.AppCompat.NoActionBar">

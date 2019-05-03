@@ -21,7 +21,6 @@ public class CaseMenu extends AppCompatActivity {
     }
 
     public void onClickBack(View view) {
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
+        onBackPressed();
     }
 }

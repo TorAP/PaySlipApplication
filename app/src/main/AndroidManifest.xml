@@ -9,22 +9,35 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        tools:ignore="GoogleAppIndexingWarning"
-        android:theme="@style/AppTheme">
-
-        <activity android:name=".MainActivity" android:screenOrientation="landscape">
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
+        <activity
+            android:name=".SupplementCaseIntro"
+            android:screenOrientation="landscape"
+            android:theme="@style/PopUpTheme" />
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".CaseMenu" android:screenOrientation="landscape"></activity>
-        <activity android:name=".InformationMenu" android:screenOrientation="landscape"></activity>
-        <activity android:name=".SupplementCase" android:screenOrientation="landscape"></activity>
-        <activity android:name=".SupplementInformation"
+        <activity
+            android:name=".CaseMenu"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".InformationMenu"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".SupplementCase"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".SupplementInformation"
             android:screenOrientation="landscape"
-            android:theme="@style/PopUpTheme"></activity>
+            android:theme="@style/PopUpTheme" />
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
