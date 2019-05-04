@@ -13,15 +13,12 @@ import android.widget.TextView;
 
 public class SupplementCasePart2 extends SupplementCase {
 
-
-    TextView dragger1, dragger2, dragger3, dragger4, dropper1, dropper2, dropper3, dropper4;
-    private static String DRAGGER_TAG = "Drag";
+    TextView dragger4, dropper4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_supplement_case_part2);
-
 
 
         dragger1 = (TextView) findViewById(R.id.dragArbBidrag);
@@ -36,8 +33,7 @@ public class SupplementCasePart2 extends SupplementCase {
         dropper1 = (TextView) findViewById(R.id.dropArbBidrag);
         dropper2 = (TextView) findViewById(R.id.dropAIndkomst);
         dropper3 = (TextView) findViewById(R.id.dropLoensats);
-        dropper3 = (TextView) findViewById(R.id.dropASkat);
-
+        dropper4 = (TextView) findViewById(R.id.dropASkat);
 
 
         dragger1.setOnLongClickListener(longClickListener);
@@ -60,6 +56,7 @@ public class SupplementCasePart2 extends SupplementCase {
         dropper4.setOnDragListener(dragListener);
 
     }
+
     // A Callback Method, which detects if objects of the View-class has been clicked
     View.OnLongClickListener longClickListener = new View.OnLongClickListener() {
 
@@ -167,6 +164,11 @@ public class SupplementCasePart2 extends SupplementCase {
         startActivity(intent);
     }
 
-
-
+    @Override
+    public void showIntro() {
+        Intent intent = new Intent(this, SupplementCaseIntro.class);
+        String message = getResources().getString(R.string.supplementCaseIntro2);
+        intent.putExtra(EXTRA_MESSAGE, message);
+        startActivity(intent);
+    }
 }

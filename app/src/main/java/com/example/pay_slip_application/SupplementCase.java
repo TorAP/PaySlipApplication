@@ -15,8 +15,8 @@ import android.widget.Toast;
 public class SupplementCase extends AppCompatActivity {
 
     TextView dragger1, dragger2, dragger3, dropper1, dropper2, dropper3;
-    private static String DRAGGER_TAG = "Drag";
-    public static final String EXTRA_MESSAGE = "MESSAGE";
+    static String DRAGGER_TAG = "Drag";
+    static final String EXTRA_MESSAGE = "MESSAGE";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,7 +50,7 @@ public class SupplementCase extends AppCompatActivity {
         dropper2.setOnDragListener(dragListener);
         dropper3.setOnDragListener(dragListener);
 
-
+        showIntro();
     }
 
     // A Callback Method, which detects if objects of the View-class has been clicked
@@ -162,16 +162,20 @@ public class SupplementCase extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void onClick(View view) {
+    public void onClickContinue(View view) {
         Intent intent = new Intent(this, SupplementCasePart2.class);
         startActivity(intent);
     }
 
-    public void onClickIntro(View view) {
+    public void showIntro() {
         Intent intent = new Intent(this, SupplementCaseIntro.class);
-        String message = getResources().getString(R.string.supplementCaseIntro);
+        String message = getResources().getString(R.string.supplementCaseIntro1);
         intent.putExtra(EXTRA_MESSAGE, message);
         startActivity(intent);
+    }
+
+    public void onClickIntro(View view) {
+        showIntro();
     }
 
 }
