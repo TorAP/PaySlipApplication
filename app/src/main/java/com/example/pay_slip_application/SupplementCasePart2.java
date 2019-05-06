@@ -25,7 +25,7 @@ public class SupplementCasePart2 extends SupplementCase {
         dragger1.setTag(DRAGGER_TAG);
         dragger2 = (TextView) findViewById(R.id.dragAIndkomst);
         dragger2.setTag(DRAGGER_TAG);
-        dragger3 = (TextView) findViewById(R.id.dragLoentillæg);
+        dragger3 = (TextView) findViewById(R.id.dragLoensats);
         dragger3.setTag(DRAGGER_TAG);
         dragger4 = (TextView) findViewById(R.id.dragASkat);
         dragger4.setTag(DRAGGER_TAG);
