@@ -16,7 +16,6 @@
                   android:screenOrientation="landscape"/>
         <activity
             android:name=".SupplementCaseIntro"
-            android:screenOrientation="landscape"
             android:theme="@style/PopUpTheme" />
         <activity
             android:name=".MainActivity"
