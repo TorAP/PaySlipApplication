@@ -22,7 +22,7 @@ public class SupplementCaseIntro extends AppCompatActivity {
         int width = displayMetrics.widthPixels;
         int height = displayMetrics.heightPixels;
         //set the window to not fill the entire screen
-        getWindow().setLayout((int)(width*0.7),(int)(height*0.6));
+        getWindow().setLayout((int)(width*0.8),(int)(height*0.7));
 
         Intent intent = getIntent();
         String message = intent.getStringExtra("MESSAGE");
