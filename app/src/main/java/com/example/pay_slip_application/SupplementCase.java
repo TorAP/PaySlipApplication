@@ -1,9 +1,11 @@
 package com.example.pay_slip_application;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ClipData;
 import android.content.ClipDescription;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -182,8 +184,48 @@ public class SupplementCase extends AppCompatActivity {
         startActivity(intent);
     }
 
+<<<<<<< HEAD
+
+//Alert dialog
+    public void onClickAlert(View view){
+        AlertDialog.Builder builder = new AlertDialog.Builder(SupplementCase.this);
+
+        builder.setTitle("Gå tilbage");
+
+        builder.setMessage("Hvis du aflutter vil dine fremskridt ikke blive gemt");
+
+        builder.setIcon(R.drawable.warning);
+
+        builder.setCancelable(true);
+
+        builder.setPositiveButton("Ja!", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+                SupplementCase.this.finish();
+
+            }
+        });
+
+        builder.setNegativeButton("Nej!", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+
+                dialogInterface.cancel();
+
+            }
+        });
+
+        AlertDialog alertDialog = builder.create();
+
+        alertDialog.show();
+
+
+
+=======
     public void onClickIntro(View view) {
         showIntro();
+>>>>>>> d8ba0f49ce1b967c67a5b1ec1415e8590560947c
     }
 
     public boolean checkIfPlacedCorrect(TextView firstView, TextView secondView, TextView thirdView){
