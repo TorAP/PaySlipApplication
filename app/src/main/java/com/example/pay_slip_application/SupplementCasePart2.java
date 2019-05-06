@@ -176,5 +176,8 @@ public class SupplementCasePart2 extends SupplementCase {
         startActivity(intent);
     }
 
-
+    @Override
+    public void onClickIntro(View view) {
+        super.onClickIntro(view);
+    }
 }
