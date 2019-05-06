@@ -11,52 +11,31 @@ import android.view.DragEvent;
 import android.view.View;
 import android.widget.TextView;
 
-public class SupplementCasePart2 extends SupplementCase {
+public class SupplementCasePart3 extends AppCompatActivity {
 
-    TextView dragger4, dropper4;
+    TextView dragger1, dragger2, dragger3, dragger4, dropper1, dropper2, dropper3, dropper4;
+    private static String DRAGGER_TAG = "Drag";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_supplement_case_part2);
+        setContentView(R.layout.activity_supplement_case_part3);
 
 
-        dragger1 = (TextView) findViewById(R.id.dragArbBidrag);
+        dragger1 = (TextView) findViewById(R.id.dragLoensats);
         dragger1.setTag(DRAGGER_TAG);
-        dragger2 = (TextView) findViewById(R.id.dragAIndkomst);
+        dragger2 = (TextView) findViewById(R.id.dragLoentillæg);
         dragger2.setTag(DRAGGER_TAG);
-        dragger3 = (TextView) findViewById(R.id.dragLoentillæg);
-        dragger3.setTag(DRAGGER_TAG);
-        dragger4 = (TextView) findViewById(R.id.dragASkat);
-        dragger4.setTag(DRAGGER_TAG);
 
-        dropper1 = (TextView) findViewById(R.id.dropArbBidrag);
-        dropper2 = (TextView) findViewById(R.id.dropAIndkomst);
-        dropper3 = (TextView) findViewById(R.id.dropLoensats);
-        dropper4 = (TextView) findViewById(R.id.dropASkat);
 
+        dropper1 = (TextView) findViewById(R.id.dropLoensats);
+        dropper2 = (TextView) findViewById(R.id.dropLoentillæg);
 
         dragger1.setOnLongClickListener(longClickListener);
         dragger2.setOnLongClickListener(longClickListener);
-        dragger3.setOnLongClickListener(longClickListener);
-        dragger4.setOnLongClickListener(longClickListener);
-        dropper1.setOnLongClickListener(longClickListener);
-        dropper2.setOnLongClickListener(longClickListener);
-        dropper3.setOnLongClickListener(longClickListener);
-        dropper4.setOnLongClickListener(longClickListener);
 
-
-        dragger1.setOnDragListener(dragListener);
-        dragger2.setOnDragListener(dragListener);
-        dragger3.setOnDragListener(dragListener);
-        dragger4.setOnDragListener(dragListener);
-        dropper1.setOnDragListener(dragListener);
-        dropper2.setOnDragListener(dragListener);
-        dropper3.setOnDragListener(dragListener);
-        dropper4.setOnDragListener(dragListener);
 
     }
-
     // A Callback Method, which detects if objects of the View-class has been clicked
     View.OnLongClickListener longClickListener = new View.OnLongClickListener() {
 
@@ -81,6 +60,7 @@ public class SupplementCasePart2 extends SupplementCase {
 
 
     };
+
     // Callback method that detects different actions of a view being dragged
     View.OnDragListener dragListener = new View.OnDragListener() {
 
@@ -164,11 +144,4 @@ public class SupplementCasePart2 extends SupplementCase {
         startActivity(intent);
     }
 
-    @Override
-    public void showIntro() {
-        Intent intent = new Intent(this, SupplementCaseIntro.class);
-        String message = getResources().getString(R.string.supplementCaseIntro2);
-        intent.putExtra(EXTRA_MESSAGE, message);
-        startActivity(intent);
-    }
 }
