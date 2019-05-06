@@ -19,27 +19,32 @@
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/payslip2" />
 
-    <Button
-        android:id="@+id/getInfoButton1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+    <ImageButton
+        android:id="@+id/infoButton"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="232dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
+        android:background="@android:color/transparent"
         android:onClick="onClickInfo"
-        android:text="Info"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toStartOf="@+id/introButton"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/info_buttonmdpi" />
 
-    <Button
+    <ImageButton
         android:id="@+id/introButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:onClick="onClickIntro"
-        android:text="intro"
-        app:layout_constraintEnd_toStartOf="@+id/getInfoButton1"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="304dp"
+        android:background="@android:color/transparent"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/intro_buttonmdpi" />
 
     <TextView
         android:id="@+id/dragLoensats"

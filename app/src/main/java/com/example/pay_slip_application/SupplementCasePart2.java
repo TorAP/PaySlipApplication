@@ -171,4 +171,9 @@ public class SupplementCasePart2 extends SupplementCase {
         intent.putExtra(EXTRA_MESSAGE, message);
         startActivity(intent);
     }
+
+    @Override
+    public void onClickIntro(View view) {
+        super.onClickIntro(view);
+    }
 }
