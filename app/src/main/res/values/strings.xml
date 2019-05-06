@@ -10,4 +10,8 @@
     <string name="supplementCaseIntro1">Jimmy Petersen med CPR-nummeret 0110021197 skal til at modtage sin første løn. Han har arbejdet hele august måned og får udbetalt lønnen d. 1. i hver måned.</string>
     <string name="okayButton">Ok</string>
     <string name="supplementCaseIntro2">Jimmys chef fortæller ham at Jimmy får62.16 kr. i timen, og a han skal være opmærksom på at af hele Jimmys løn skal han betale arbejdsmarkedsbidrag(forkortet BIDRAG ARB. M.FONDE).  Men Jimmy skal ikke betale skat af sin løn, fordi ikke komme til at tjene mere end 35.000kr. årligt.   Derfor er den løn som Jimmy får udbetalt (\"Løn overført til pengeinstitut\"), det samme beløb som er tilbage når arbejdsmarkedsbidrag er betalt(forkortet med \"A-indkomst\")</string>
+    <string name="LoensatsButtonText">62,16 kr</string>
+    <string name="ArbBidrag">8%</string>
+    <string name="aIndkomstButtonText">1.120,72 kr</string>
+    <string name="aSkatButtonText">A-Skat</string>
 </resources>
