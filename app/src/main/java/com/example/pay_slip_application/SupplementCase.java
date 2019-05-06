@@ -166,16 +166,7 @@ public class SupplementCase extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void onClickContinue(View view) {
-        if (checkIfPlacedCorrect()) {
-            Intent intent = new Intent(this, SupplementCasePart2.class);
-            startActivity(intent);
-        }
-        else {
-            //Makes a toast telling the user they made a mistake
-            Toast.makeText(getApplicationContext(),TOAST_MESSAGE,Toast.LENGTH_SHORT).show();
-        }
-    }
+
 
     public void showIntro() {
         Intent intent = new Intent(this, SupplementCaseIntro.class);
@@ -184,7 +175,6 @@ public class SupplementCase extends AppCompatActivity {
         startActivity(intent);
     }
 
-<<<<<<< HEAD
 
 //Alert dialog
     public void onClickAlert(View view){
@@ -222,19 +212,5 @@ public class SupplementCase extends AppCompatActivity {
 
 
 
-=======
-    public void onClickIntro(View view) {
-        showIntro();
->>>>>>> d8ba0f49ce1b967c67a5b1ec1415e8590560947c
-    }
-
-    public boolean checkIfPlacedCorrect(){
-        //Checks if the Strings in the Drop areas are correct
-        if (dropper1.getText().equals("Jimmy") && dropper2.getText().equals("0405021199") && dropper3.getText().equals("August")){
-            return true;
-        }
-        else{
-            return false;
-        }
-    }
+}
 }
