@@ -165,7 +165,7 @@ public class SupplementCase extends AppCompatActivity {
     }
 
     public void onClickContinue(View view) {
-        if (checkIfPlacedCorrect()) {
+        if (checkIfPlacedCorrect(dropper1, dropper2, dropper3)) {
             Intent intent = new Intent(this, SupplementCasePart2.class);
             startActivity(intent);
         }
@@ -186,9 +186,9 @@ public class SupplementCase extends AppCompatActivity {
         showIntro();
     }
 
-    public boolean checkIfPlacedCorrect(){
+    public boolean checkIfPlacedCorrect(TextView firstView, TextView secondView, TextView thirdView){
         //Checks if the Strings in the Drop areas are correct
-        if (dropper1.getText().equals("Jimmy") && dropper2.getText().equals("0405021199") && dropper3.getText().equals("August")){
+        if (firstView.getText().equals("Jimmy") && secondView.getText().equals("0405021199") && thirdView.getText().equals("August")){
             return true;
         }
         else{
