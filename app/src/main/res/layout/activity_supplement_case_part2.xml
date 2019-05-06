@@ -32,7 +32,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/dragLoensats"
+        android:id="@+id/dragLoentillæg"
         android:layout_width="85dp"
         android:layout_height="51dp"
         android:layout_marginStart="40dp"
@@ -51,7 +51,7 @@
         android:text="8%"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/dragAIndkomst"
-        app:layout_constraintStart_toEndOf="@+id/dragLoensats" />
+        app:layout_constraintStart_toEndOf="@+id/dragLoentillæg" />
 
     <Button
         android:id="@+id/dragAIndkomst"
