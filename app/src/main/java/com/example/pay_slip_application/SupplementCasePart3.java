@@ -11,7 +11,7 @@ import android.view.DragEvent;
 import android.view.View;
 import android.widget.TextView;
 
-public class SupplementCasePart3 extends SupplementCase {
+public class SupplementCasePart3 extends AppCompatActivity {
 
     TextView dragger1, dragger2, dragger3, dragger4, dropper1, dropper2, dropper3, dropper4;
     private static String DRAGGER_TAG = "Drag";
@@ -144,8 +144,4 @@ public class SupplementCasePart3 extends SupplementCase {
         startActivity(intent);
     }
 
-    @Override
-    public void onClickAlert(View view) {
-        super.onClickAlert(view);
-    }
 }

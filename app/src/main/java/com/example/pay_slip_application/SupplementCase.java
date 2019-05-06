@@ -1,11 +1,9 @@
 package com.example.pay_slip_application;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ClipData;
 import android.content.ClipDescription;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -167,6 +165,17 @@ public class SupplementCase extends AppCompatActivity {
     }
 
 
+    public void onClickContinue(View view) {
+        if (checkIfPlacedCorrect(dropper1, dropper2, dropper3)) {
+            Intent intent = new Intent(this, SupplementCasePart2.class);
+            startActivity(intent);
+        }
+        else {
+            //Makes a toast telling the user they made a mistake
+            Toast.makeText(getApplicationContext(),TOAST_MESSAGE,Toast.LENGTH_SHORT).show();
+        }
+    }
+
 
     public void showIntro() {
         Intent intent = new Intent(this, SupplementCaseIntro.class);
@@ -213,4 +222,19 @@ public class SupplementCase extends AppCompatActivity {
 
 
 }
+
+    public void onClickIntro(View view) {
+        showIntro();
+    }
+
+    public boolean checkIfPlacedCorrect(TextView firstView, TextView secondView, TextView thirdView){
+        //Checks if the Strings in the Drop areas are correct
+        if (firstView.getText().equals("Jimmy") && secondView.getText().equals("0405021199") && thirdView.getText().equals("August")){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
 }
