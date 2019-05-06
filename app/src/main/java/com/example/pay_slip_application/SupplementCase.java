@@ -11,6 +11,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.DragEvent;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,6 +20,8 @@ public class SupplementCase extends AppCompatActivity {
     TextView dragger1, dragger2, dragger3, dropper1, dropper2, dropper3;
     static String DRAGGER_TAG = "Drag";
     static final String EXTRA_MESSAGE = "MESSAGE";
+    static final String EXTRA_TEXT_SIZE = "TEXT SIZE";
+    static int INTRO_TEXT_SIZE;
     final public String TOAST_MESSAGE = "Du har lavet en fejl. Prøv igen";
 
 
@@ -27,6 +30,7 @@ public class SupplementCase extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_supplement_case);
 
+        INTRO_TEXT_SIZE = 18;
 
         dragger1 = (TextView) findViewById(R.id.dragName);
         dragger1.setTag(DRAGGER_TAG);
@@ -98,7 +102,7 @@ public class SupplementCase extends AppCompatActivity {
                     if (((TextView) v).getText() == "" && (srcView.getTag() != DRAGGER_TAG || srcView.getTag() != v.getTag())) {
                         if (event.getClipDescription().hasMimeType(ClipDescription.MIMETYPE_TEXT_PLAIN)) {
 
-                            v.setBackgroundColor(Color.YELLOW);
+                            v.setBackgroundColor(getColor(R.color.colorDropZone));
 
                             return true;
                         }
@@ -108,14 +112,14 @@ public class SupplementCase extends AppCompatActivity {
                 // Controls what happens when a drag has entered the boundaries of a OnDragListener
                 case DragEvent.ACTION_DRAG_ENTERED:
                     if (((TextView) v).getText() == "") {
-                        v.setBackgroundColor(Color.GREEN);
+                        v.setBackgroundColor(getColor(R.color.colorEnterDrop));
                     }
 
                     return true;
 
                 // Controls what happens when the dragged item is dragged away from the OnDragListener's boundaries
                 case DragEvent.ACTION_DRAG_EXITED:
-                    v.setBackgroundColor(Color.YELLOW);
+                    v.setBackgroundColor(getColor(R.color.colorDropZone));
 
                     return true;
 
@@ -143,7 +147,7 @@ public class SupplementCase extends AppCompatActivity {
                 // Resets color when drag is ended
                 case DragEvent.ACTION_DRAG_ENDED:
 
-                    v.setBackgroundColor(Color.WHITE);
+                    v.setBackgroundColor(getColor(R.color.colorLightGrey));
 
 
                     // returns true; the value is ignored.
@@ -171,10 +175,9 @@ public class SupplementCase extends AppCompatActivity {
         if (checkIfPlacedCorrect(dropper1, dropper2, dropper3)) {
             Intent intent = new Intent(this, SupplementCasePart2.class);
             startActivity(intent);
-        }
-        else {
+        } else {
             //Makes a toast telling the user they made a mistake
-            Toast.makeText(getApplicationContext(),TOAST_MESSAGE,Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), TOAST_MESSAGE, Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -183,12 +186,13 @@ public class SupplementCase extends AppCompatActivity {
         Intent intent = new Intent(this, SupplementCaseIntro.class);
         String message = getResources().getString(R.string.supplementCaseIntro1);
         intent.putExtra(EXTRA_MESSAGE, message);
+        intent.putExtra(EXTRA_TEXT_SIZE,INTRO_TEXT_SIZE);
         startActivity(intent);
     }
 
 
-//Alert dialog
-    public void onClickAlert(View view){
+    //Alert dialog
+    public void onClickAlert(final View view) {
         AlertDialog.Builder builder = new AlertDialog.Builder(SupplementCase.this);
 
         builder.setTitle("Gå tilbage");
@@ -202,9 +206,16 @@ public class SupplementCase extends AppCompatActivity {
         builder.setPositiveButton("Ja!", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-
-                SupplementCase.this.finish();
-
+                ImageButton backButton = (ImageButton) findViewById(R.id.backButton);
+                ImageButton homeButton = (ImageButton) findViewById(R.id.homeButton);
+                if (view == backButton) {
+                    Intent intent = new Intent(getApplicationContext(), CaseMenu.class);
+                    startActivity(intent);
+                }
+                if (view == homeButton) {
+                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                    startActivity(intent);
+                }
             }
         });
 
@@ -221,22 +232,25 @@ public class SupplementCase extends AppCompatActivity {
 
         alertDialog.show();
 
+    }
 
-
-}
 
     public void onClickIntro(View view) {
         showIntro();
     }
 
-    public boolean checkIfPlacedCorrect(TextView firstView, TextView secondView, TextView thirdView){
+    public boolean checkIfPlacedCorrect(TextView firstView, TextView secondView, TextView thirdView) {
         //Checks if the Strings in the Drop areas are correct
-        if (firstView.getText().equals("Jimmy") && secondView.getText().equals("0405021199") && thirdView.getText().equals("August")){
+        if (firstView.getText().equals(getResources().getString(R.string.name)) && secondView.getText().equals(getResources().getString(R.string.cpr))
+                && thirdView.getText().equals(getResources().getString(R.string.month))) {
             return true;
-        }
-        else{
+        } else {
             return false;
         }
     }
 
+    @Override
+    public void onBackPressed() {
+
+    }
 }

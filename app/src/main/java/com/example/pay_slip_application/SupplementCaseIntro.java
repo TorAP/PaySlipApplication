@@ -22,13 +22,15 @@ public class SupplementCaseIntro extends AppCompatActivity {
         int width = displayMetrics.widthPixels;
         int height = displayMetrics.heightPixels;
         //set the window to not fill the entire screen
-        getWindow().setLayout((int)(width*0.8),(int)(height*0.7));
+        getWindow().setLayout((int)(width*0.9),(int)(height*0.7));
 
         Intent intent = getIntent();
         String message = intent.getStringExtra("MESSAGE");
+        int textSize = intent.getIntExtra("TEXT SIZE", SupplementCase.INTRO_TEXT_SIZE);
 
         TextView textView = (TextView) findViewById(R.id.supplementCaseIntroText);
         textView.setText(message);
+        textView.setTextSize(textSize);
     }
 
     public void onBackPressed(View view) {

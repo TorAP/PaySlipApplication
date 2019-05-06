@@ -23,13 +23,11 @@
         android:id="@+id/infoButton"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:layout_marginStart="232dp"
+        android:layout_marginStart="280dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
         android:background="@android:color/transparent"
         android:onClick="onClickInfo"
         android:scaleType="centerCrop"
-        app:layout_constraintEnd_toStartOf="@+id/introButton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/info_buttonmdpi" />
@@ -39,7 +37,7 @@
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="304dp"
+        android:layout_marginEnd="280dp"
         android:background="@android:color/transparent"
         android:onClick="onClickIntro"
         android:scaleType="centerCrop"
@@ -70,7 +68,7 @@
         android:text="@string/ArbBidrag"
         android:textColor="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="@+id/dragLoensats"
-        app:layout_constraintStart_toEndOf="@+id/dragLoensats" />
+        app:layout_constraintStart_toEndOf="@+id/dragAIndkomst" />
 
     <TextView
         android:id="@+id/dragAIndkomst"
@@ -82,7 +80,7 @@
         android:text="@string/aIndkomstButtonText"
         android:textColor="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="@+id/dragArbBidrag"
-        app:layout_constraintStart_toEndOf="@+id/dragArbBidrag" />
+        app:layout_constraintStart_toEndOf="@+id/dragASkat" />
 
     <TextView
         android:id="@+id/dragASkat"
@@ -94,7 +92,7 @@
         android:text="@string/aSkatButtonText"
         android:textColor="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="@+id/dragAIndkomst"
-        app:layout_constraintStart_toEndOf="@+id/dragAIndkomst" />
+        app:layout_constraintStart_toEndOf="@+id/dragLoensats" />
 
     <TextView
         android:id="@+id/dropASkat"
@@ -104,7 +102,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:background="#FFF"
+        android:background="@color/colorLightGrey"
         android:textColor="@color/colorPrimary"
         android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -122,7 +120,7 @@
         android:layout_marginTop="10dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:background="#FFF"
+        android:background="@color/colorLightGrey"
         android:gravity="center"
         android:textColor="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -130,43 +128,43 @@
         app:layout_constraintHorizontal_bias="0.814"
         app:layout_constraintStart_toStartOf="@+id/paySlipPart2"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.177" />
+        app:layout_constraintVertical_bias="0.389" />
 
     <TextView
         android:id="@+id/dropLoensats"
-        android:layout_width="84dp"
-        android:layout_height="19dp"
+        android:layout_width="83dp"
+        android:layout_height="23dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:background="#FFF"
-        android:textColor="@color/colorPrimary"
+        android:background="@color/colorLightGrey"
         android:gravity="center"
+        android:textColor="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="@+id/paySlipPart2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.811"
+        app:layout_constraintHorizontal_bias="0.815"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.4" />
+        app:layout_constraintVertical_bias="0.188" />
 
     <TextView
         android:id="@+id/dropAIndkomst"
-        android:layout_width="83dp"
-        android:layout_height="21dp"
+        android:layout_width="86dp"
+        android:layout_height="24dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="13dp"
         android:layout_marginBottom="8dp"
-        android:background="#FFF"
+        android:background="@color/colorLightGrey"
         android:gravity="center"
         android:textColor="@color/colorPrimary"
-        app:layout_constraintBottom_toBottomOf="@+id/paySlipPart2"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.989"
+        app:layout_constraintHorizontal_bias="0.994"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.684" />
+        app:layout_constraintVertical_bias="0.681" />
 
     <ImageButton
         android:id="@+id/checkButton"
@@ -175,9 +173,36 @@
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="8dp"
         android:background="@android:color/transparent"
+        android:onClick="onClickContinue"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/go_button" />
+
+    <ImageButton
+        android:id="@+id/backButton"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/transparent"
+        android:onClick="onClickAlert"
+        android:scaleType="centerCrop"
+        app:layout_constraintStart_toEndOf="@+id/homeButton"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/back_button" />
+
+    <ImageButton
+        android:id="@+id/homeButton"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/transparent"
+        android:onClick="onClickAlert"
+        android:scaleType="centerCrop"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/home_button" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
