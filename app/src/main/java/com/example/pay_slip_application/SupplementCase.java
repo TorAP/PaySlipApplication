@@ -18,7 +18,7 @@ public class SupplementCase extends AppCompatActivity {
     static String DRAGGER_TAG = "Drag";
     static final String EXTRA_MESSAGE = "MESSAGE";
     public boolean doneCorrectly;
-    final String TOAST_MESSAGE = "Du har lavet en fejl. Prøv igen";
+    final public String TOAST_MESSAGE = "Du har lavet en fejl. Prøv igen";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -171,6 +171,7 @@ public class SupplementCase extends AppCompatActivity {
             startActivity(intent);
         }
         else {
+            //Makes a toast telling the user they made a mistake
             Toast.makeText(getApplicationContext(),TOAST_MESSAGE,Toast.LENGTH_SHORT).show();
         }
     }
@@ -187,6 +188,7 @@ public class SupplementCase extends AppCompatActivity {
     }
 
     public void checkIfPlacedCorrect(){
+        //Checks if the Strings in the Drop areas are correct
         if (dropper1.getText().equals("0405021199") && dropper2.getText().equals("Jimmy") && dropper3.getText().equals("August")){
             doneCorrectly = true;
         }
