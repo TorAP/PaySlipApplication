@@ -53,7 +53,7 @@
                 android:background="@android:color/transparent"
                 android:onClick="onClickCase1"
                 android:scaleType="fitCenter"
-                app:srcCompat="@drawable/supplementcase" />
+                app:srcCompat="@drawable/overview_case" />
 
             <ImageButton
                 android:id="@+id/case2Button"
@@ -78,19 +78,17 @@
         </LinearLayout>
     </HorizontalScrollView>
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="94dp"
-        android:layout_height="45dp"
+    <ImageButton
+        android:id="@+id/backButton"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"
-        android:background="#154677"
-        android:fontFamily="@font/hammersmith_one"
-        android:includeFontPadding="false"
+        android:background="@android:color/transparent"
         android:onClick="onClickBack"
+        android:scaleType="centerCrop"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:text="@string/infoMenuBackButton"/>
+        app:srcCompat="@drawable/back_button" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
