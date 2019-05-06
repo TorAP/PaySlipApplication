@@ -25,7 +25,7 @@ public class SupplementCasePart2 extends SupplementCase {
         dragger1.setTag(DRAGGER_TAG);
         dragger2 = (TextView) findViewById(R.id.dragAIndkomst);
         dragger2.setTag(DRAGGER_TAG);
-        dragger3 = (TextView) findViewById(R.id.dragLoentillæg);
+        dragger3 = (TextView) findViewById(R.id.dragLoensats);
         dragger3.setTag(DRAGGER_TAG);
         dragger4 = (TextView) findViewById(R.id.dragASkat);
         dragger4.setTag(DRAGGER_TAG);
@@ -175,5 +175,10 @@ public class SupplementCasePart2 extends SupplementCase {
         intent.putExtra(EXTRA_MESSAGE, message);
         startActivity(intent);
 >>>>>>> d8ba0f49ce1b967c67a5b1ec1415e8590560947c
+    }
+
+    @Override
+    public void onClickIntro(View view) {
+        super.onClickIntro(view);
     }
 }
