@@ -165,6 +165,10 @@ public class SupplementCasePart2 extends SupplementCase {
     }
 
     @Override
+    public void onClickAlert(View view) {
+        super.onClickAlert(view);
+    }
+
     public void showIntro() {
         Intent intent = new Intent(this, SupplementCaseIntro.class);
         String message = getResources().getString(R.string.supplementCaseIntro2);
@@ -172,8 +176,5 @@ public class SupplementCasePart2 extends SupplementCase {
         startActivity(intent);
     }
 
-    @Override
-    public void onClickIntro(View view) {
-        super.onClickIntro(view);
-    }
+
 }

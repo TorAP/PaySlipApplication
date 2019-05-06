@@ -164,6 +164,7 @@ public class SupplementCase extends AppCompatActivity {
         startActivity(intent);
     }
 
+
     public void onClickContinue(View view) {
         if (checkIfPlacedCorrect(dropper1, dropper2, dropper3)) {
             Intent intent = new Intent(this, SupplementCasePart2.class);
@@ -175,12 +176,52 @@ public class SupplementCase extends AppCompatActivity {
         }
     }
 
+
     public void showIntro() {
         Intent intent = new Intent(this, SupplementCaseIntro.class);
         String message = getResources().getString(R.string.supplementCaseIntro1);
         intent.putExtra(EXTRA_MESSAGE, message);
         startActivity(intent);
     }
+
+
+//Alert dialog
+    public void onClickAlert(View view){
+        AlertDialog.Builder builder = new AlertDialog.Builder(SupplementCase.this);
+
+        builder.setTitle("Gå tilbage");
+
+        builder.setMessage("Hvis du aflutter vil dine fremskridt ikke blive gemt");
+
+        builder.setIcon(R.drawable.warning);
+
+        builder.setCancelable(true);
+
+        builder.setPositiveButton("Ja!", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+                SupplementCase.this.finish();
+
+            }
+        });
+
+        builder.setNegativeButton("Nej!", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+
+                dialogInterface.cancel();
+
+            }
+        });
+
+        AlertDialog alertDialog = builder.create();
+
+        alertDialog.show();
+
+
+
+}
 
     public void onClickIntro(View view) {
         showIntro();
@@ -195,4 +236,5 @@ public class SupplementCase extends AppCompatActivity {
             return false;
         }
     }
+
 }
