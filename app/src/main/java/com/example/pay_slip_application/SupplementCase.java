@@ -1,9 +1,11 @@
 package com.example.pay_slip_application;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ClipData;
 import android.content.ClipDescription;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -193,7 +195,7 @@ public class SupplementCase extends AppCompatActivity {
 
         builder.setMessage("Hvis du aflutter vil dine fremskridt ikke blive gemt");
 
-        builder.setIcon(R.drawable.warning);
+        builder.setIcon(R.drawable.alert_iconmdpi);
 
         builder.setCancelable(true);
 
