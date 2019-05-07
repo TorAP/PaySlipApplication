@@ -2,6 +2,7 @@ package com.example.pay_slip_application;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.ClipData;
 import android.content.ClipDescription;
 import android.content.Intent;
@@ -17,6 +18,7 @@ public class SupplementCasePart3 extends SupplementCasePart2 {
 
     private static String DRAGGER_TAG = "Drag";
 
+    @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,10 +35,10 @@ public class SupplementCasePart3 extends SupplementCasePart2 {
         dropper1 = (TextView) findViewById(R.id.dropLoensats);
         dropper2 = (TextView) findViewById(R.id.dropLoentillæg);
 
-        dragger1.setOnLongClickListener(longClickListener);
-        dragger2.setOnLongClickListener(longClickListener);
-        dropper1.setOnLongClickListener(longClickListener);
-        dropper2.setOnLongClickListener(longClickListener);
+        dragger1.setOnTouchListener(onTouchListener);
+        dragger2.setOnTouchListener(onTouchListener);
+        dropper1.setOnTouchListener(onTouchListener);
+        dropper2.setOnTouchListener(onTouchListener);
 
         dragger1.setOnDragListener(dragListener);
         dragger2.setOnDragListener(dragListener);

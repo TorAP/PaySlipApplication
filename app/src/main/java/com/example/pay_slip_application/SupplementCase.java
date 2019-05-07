@@ -3,6 +3,7 @@ package com.example.pay_slip_application;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.ClipData;
 import android.content.ClipDescription;
 import android.content.DialogInterface;
@@ -10,6 +11,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.DragEvent;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -25,6 +27,7 @@ public class SupplementCase extends AppCompatActivity {
     final public String TOAST_MESSAGE = "Du har lavet en fejl. Prøv igen";
 
 
+    @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,12 +47,12 @@ public class SupplementCase extends AppCompatActivity {
         dropper3 = (TextView) findViewById(R.id.dropMonth);
 
 
-        dragger1.setOnLongClickListener(longClickListener);
-        dragger2.setOnLongClickListener(longClickListener);
-        dragger3.setOnLongClickListener(longClickListener);
-        dropper1.setOnLongClickListener(longClickListener);
-        dropper2.setOnLongClickListener(longClickListener);
-        dropper3.setOnLongClickListener(longClickListener);
+        dragger1.setOnTouchListener(onTouchListener);
+        dragger2.setOnTouchListener(onTouchListener);
+        dragger3.setOnTouchListener(onTouchListener);
+        dropper1.setOnTouchListener(onTouchListener);
+        dropper2.setOnTouchListener(onTouchListener);
+        dropper3.setOnTouchListener(onTouchListener);
 
         dragger1.setOnDragListener(dragListener);
         dragger2.setOnDragListener(dragListener);
@@ -62,28 +65,23 @@ public class SupplementCase extends AppCompatActivity {
     }
 
     // A Callback Method, which detects if objects of the View-class has been clicked
-    View.OnLongClickListener longClickListener = new View.OnLongClickListener() {
-
+    View.OnTouchListener onTouchListener = new View.OnTouchListener() {
+        @SuppressLint("ClickableViewAccessibility")
         @Override
-        public boolean onLongClick(View v) {
-
-            if (((TextView) v).getText() != "") {
+        public boolean onTouch(View v, MotionEvent event) {
+            if (event.getAction() == MotionEvent.ACTION_DOWN) {
                 ClipData.Item item = new ClipData.Item(((TextView) v).getText().toString());
                 String[] mimeTypes = {ClipDescription.MIMETYPE_TEXT_PLAIN};
-
-
                 ClipData data = new ClipData(((TextView) v).getText(), mimeTypes, item);
 
-                View.DragShadowBuilder myShadow = new View.DragShadowBuilder(v);
 
-                v.startDragAndDrop(data, myShadow, v, 0);
-
-                //v.setVisibility(View.INVISIBLE);
+                View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(v);
+                v.startDragAndDrop(data, shadowBuilder, v, 0);
                 return true;
-            } else return false;
+            } else {
+                return false;
+            }
         }
-
-
     };
 
     // Callback method that detects different actions of a view being dragged
@@ -155,12 +153,6 @@ public class SupplementCase extends AppCompatActivity {
             }
             return false;
         }
-
-            /*textView.animate()
-                    .x(textView3.getX())
-                    .y(textView3.getY())
-                    .setDuration(10)
-                    .start();*/
 
     };
 
