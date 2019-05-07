@@ -50,7 +50,7 @@
     <TextView
         android:id="@+id/dragLoensats"
         android:layout_width="100dp"
-        android:layout_height="35dp"
+        android:layout_height="30dp"
         android:layout_marginStart="16dp"
         android:layout_marginBottom="8dp"
         android:background="#FFF"
@@ -63,7 +63,7 @@
     <TextView
         android:id="@+id/dragArbBidrag"
         android:layout_width="100dp"
-        android:layout_height="35dp"
+        android:layout_height="30dp"
         android:layout_marginStart="16dp"
         android:background="#FFF"
         android:gravity="center"
@@ -75,7 +75,7 @@
     <TextView
         android:id="@+id/dragAIndkomst"
         android:layout_width="100dp"
-        android:layout_height="35dp"
+        android:layout_height="30dp"
         android:layout_marginStart="16dp"
         android:background="#FFF"
         android:gravity="center"
@@ -87,7 +87,7 @@
     <TextView
         android:id="@+id/dragASkat"
         android:layout_width="100dp"
-        android:layout_height="35dp"
+        android:layout_height="30dp"
         android:layout_marginStart="16dp"
         android:background="#FFF"
         android:gravity="center"
@@ -100,18 +100,17 @@
         android:id="@+id/dropASkat"
         android:layout_width="85dp"
         android:layout_height="23dp"
-        android:layout_marginStart="6dp"
-        android:layout_marginTop="3dp"
+        android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
         android:background="@color/colorLightGrey"
         android:gravity="center"
         android:textColor="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="@+id/paySlipPart2"
         app:layout_constraintEnd_toEndOf="@+id/paySlipPart2"
-        app:layout_constraintHorizontal_bias="0.198"
+        app:layout_constraintHorizontal_bias="0.232"
         app:layout_constraintStart_toStartOf="@+id/paySlipPart2"
         app:layout_constraintTop_toTopOf="@+id/paySlipPart2"
-        app:layout_constraintVertical_bias="0.587" />
+        app:layout_constraintVertical_bias="0.601" />
 
     <TextView
         android:id="@+id/dropArbBidrag"
@@ -124,10 +123,10 @@
         android:textColor="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="@+id/paySlipPart2"
         app:layout_constraintEnd_toEndOf="@+id/paySlipPart2"
-        app:layout_constraintHorizontal_bias="0.805"
+        app:layout_constraintHorizontal_bias="0.786"
         app:layout_constraintStart_toStartOf="@+id/paySlipPart2"
         app:layout_constraintTop_toTopOf="@+id/paySlipPart2"
-        app:layout_constraintVertical_bias="0.356" />
+        app:layout_constraintVertical_bias="0.357" />
 
     <TextView
         android:id="@+id/dropLoensats"
@@ -139,10 +138,10 @@
         android:textColor="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="@+id/paySlipPart2"
         app:layout_constraintEnd_toEndOf="@+id/paySlipPart2"
-        app:layout_constraintHorizontal_bias="0.805"
+        app:layout_constraintHorizontal_bias="0.787"
         app:layout_constraintStart_toStartOf="@+id/paySlipPart2"
         app:layout_constraintTop_toTopOf="@+id/paySlipPart2"
-        app:layout_constraintVertical_bias="0.062" />
+        app:layout_constraintVertical_bias="0.064" />
 
     <TextView
         android:id="@+id/dropAIndkomst"
@@ -155,10 +154,10 @@
         android:textColor="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="@+id/paySlipPart2"
         app:layout_constraintEnd_toEndOf="@+id/paySlipPart2"
-        app:layout_constraintHorizontal_bias="0.972"
+        app:layout_constraintHorizontal_bias="0.954"
         app:layout_constraintStart_toStartOf="@+id/paySlipPart2"
         app:layout_constraintTop_toTopOf="@+id/paySlipPart2"
-        app:layout_constraintVertical_bias="0.754" />
+        app:layout_constraintVertical_bias="0.782" />
 
     <ImageButton
         android:id="@+id/checkButton"
