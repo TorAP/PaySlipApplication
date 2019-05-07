@@ -42,8 +42,4 @@ public class SupplementInformation extends AppCompatActivity {
         supplementVideo.setMediaController(mediaController);
         mediaController.setAnchorView(frame);
     }
-    public void onClickSupplementInformationBackButton(View view){
-        Intent intent = new Intent(this, InformationMenu.class); //Info menu class
-        startActivity(intent);
-    }
 }

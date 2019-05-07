@@ -7,25 +7,12 @@
     android:background="@drawable/gradient_background"
     tools:context=".InformationMenu">
 
-    <Button
-        android:id="@+id/infoMenuBackButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:background="#154677"
-        android:onClick="onClickInfoMenuBackButton"
-        android:text="@string/infoMenuBackButton"
-        android:textColor="#ffffff"
-        app:fontFamily="@font/hammersmith_one"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <TextView
         android:id="@+id/infoMenuTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
+        android:background="@android:color/transparent"
         android:fontFamily="@font/hammersmith_one"
         android:text="@string/infoMenuTitle"
         android:textColor="@color/colorPrimary"
@@ -35,22 +22,70 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@android:color/transparent"
+        android:onClick="onClickInfoMenuBackButton"
+        android:scaleType="centerCrop"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/back_button" />
+
+    <ImageButton
         android:id="@+id/supplementInfoButton"
         android:layout_width="160dp"
         android:layout_height="160dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="60dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="8dp"
         android:background="@android:color/transparent"
         android:contentDescription="@string/supplementInfoImageButton"
         android:onClick="onClickSupplementInfoButton"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/lockedItem2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/lockedItem1"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.823"
+        app:layout_constraintVertical_bias="0.566"
         app:srcCompat="@drawable/supplement_info"
         tools:visibility="visible" />
+
+    <ImageButton
+        android:id="@+id/lockedItem1"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="8dp"
+        android:background="@android:color/transparent"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/supplementInfoButton"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.56"
+        app:srcCompat="@drawable/lockedcase" />
+
+    <ImageButton
+        android:id="@+id/lockedItem2"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="8dp"
+        android:background="@android:color/transparent"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/supplementInfoButton"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.56"
+        app:srcCompat="@drawable/lockedcase" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

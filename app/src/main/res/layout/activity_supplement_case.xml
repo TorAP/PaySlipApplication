@@ -9,41 +9,25 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="0dp"
-        android:layout_height="292dp"
-        android:layout_marginStart="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="6dp"
+        android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toTopOf="@+id/dragMonth"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintTop_toBottomOf="@+id/infoButton"
         app:srcCompat="@drawable/payslipone" />
 
-    <Button
-        android:id="@+id/getInfoButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:onClick="onClickInfo"
-        android:text="Info"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <TextView
-        android:id="@+id/dropName"
+        android:id="@+id/dropCpr"
         android:layout_width="92dp"
         android:layout_height="20dp"
         android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
+        android:layout_marginTop="3dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:background="#FFF"
+        android:background="@color/colorLightGrey"
         android:gravity="center"
         android:textAlignment="center"
         android:textColor="@color/colorPrimary"
@@ -56,14 +40,14 @@
 
 
     <TextView
-        android:id="@+id/dropCpr"
+        android:id="@+id/dropName"
         android:layout_width="88dp"
         android:layout_height="22dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="7dp"
-        android:background="#FFF"
+        android:background="@color/colorLightGrey"
         android:gravity="center"
         android:textAlignment="center"
         android:textColor="@color/colorPrimary"
@@ -79,26 +63,25 @@
         android:layout_width="89dp"
         android:layout_height="26dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="26dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:background="#FFF"
+        android:background="@color/colorLightGrey"
         android:gravity="center"
         android:textAlignment="center"
         android:textColor="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="@+id/imageView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.781"
+        app:layout_constraintHorizontal_bias="0.792"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.74" />
+        app:layout_constraintVertical_bias="0.75" />
 
     <TextView
         android:id="@+id/dragName"
         android:layout_width="100dp"
         android:layout_height="35dp"
-        android:layout_marginStart="124dp"
-        android:layout_marginEnd="41dp"
+        android:layout_marginStart="16dp"
         android:layout_marginBottom="16dp"
         android:background="#FFF"
         android:gravity="center"
@@ -106,43 +89,105 @@
         android:shadowDx="@android:integer/config_mediumAnimTime"
         android:shadowDy="@android:integer/config_mediumAnimTime"
         android:shadowRadius="@android:integer/config_mediumAnimTime"
-        android:text="Jimmy"
+        android:text="@string/name"
         android:textAlignment="center"
         android:textColor="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/dragCpr"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toEndOf="@+id/dragCpr" />
 
     <TextView
         android:id="@+id/dragCpr"
         android:layout_width="100dp"
         android:layout_height="35dp"
-        android:layout_marginStart="69dp"
-        android:layout_marginEnd="69dp"
+        android:layout_marginStart="16dp"
         android:background="#FFF"
         android:gravity="center"
-        android:text="0405021199"
+        android:text="@string/cpr"
         android:textAlignment="center"
         android:textColor="@color/colorPrimary"
         app:layout_constraintBaseline_toBaselineOf="@+id/dragName"
-        app:layout_constraintEnd_toStartOf="@+id/dragMonth"
-        app:layout_constraintStart_toEndOf="@+id/dragName" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/dragMonth"
         android:layout_width="100dp"
         android:layout_height="35dp"
-        android:layout_marginStart="41dp"
-        android:layout_marginEnd="124dp"
+        android:layout_marginStart="16dp"
         android:background="#FFF"
         android:gravity="center"
-        android:text="August"
+        android:text="@string/month"
         android:textAlignment="center"
         android:textColor="@color/colorPrimary"
         app:layout_constraintBaseline_toBaselineOf="@+id/dragCpr"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/dragCpr" />
+        app:layout_constraintStart_toEndOf="@+id/dragName" />
 
+
+    <ImageButton
+        android:id="@+id/checkButton"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="8dp"
+        android:background="@android:color/transparent"
+        android:onClick="onClickContinue"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/go_button" />
+
+    <ImageButton
+        android:id="@+id/introButton"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="260dp"
+        android:background="@android:color/transparent"
+        android:onClick="onClickIntro"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/intro_buttonmdpi" />
+
+    <ImageButton
+        android:id="@+id/backButton"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/transparent"
+        android:onClick="onClickAlert"
+        android:scaleType="centerCrop"
+        app:layout_constraintStart_toEndOf="@+id/homeButton"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/back_button" />
+
+    <ImageButton
+        android:id="@+id/infoButton"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="260dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:background="@android:color/transparent"
+        android:onClick="onClickInfo"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toStartOf="@+id/introButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/info_buttonmdpi" />
+
+    <ImageButton
+        android:id="@+id/homeButton"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/transparent"
+        android:onClick="onClickAlert"
+        android:scaleType="centerCrop"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/home_button" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

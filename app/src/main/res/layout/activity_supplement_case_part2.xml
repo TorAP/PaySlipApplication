@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_background"
+    tools:context=".SupplementCasePart2">
+
+    <ImageView
+        android:id="@+id/paySlipPart2"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/dragAIndkomst"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/infoButton"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/payslip2" />
+
+    <ImageButton
+        android:id="@+id/infoButton"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="260dp"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/transparent"
+        android:onClick="onClickInfo"
+        android:scaleType="centerCrop"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/info_buttonmdpi" />
+
+    <ImageButton
+        android:id="@+id/introButton"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="260dp"
+        android:background="@android:color/transparent"
+        android:onClick="onClickIntro"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/intro_buttonmdpi" />
+
+    <TextView
+        android:id="@+id/dragLoensats"
+        android:layout_width="100dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="8dp"
+        android:background="#FFF"
+        android:gravity="center"
+        android:text="@string/LoensatsButtonText"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/dragArbBidrag"
+        android:layout_width="100dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="16dp"
+        android:background="#FFF"
+        android:gravity="center"
+        android:text="@string/ArbBidrag"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="@+id/dragLoensats"
+        app:layout_constraintStart_toEndOf="@+id/dragAIndkomst" />
+
+    <TextView
+        android:id="@+id/dragAIndkomst"
+        android:layout_width="100dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="16dp"
+        android:background="#FFF"
+        android:gravity="center"
+        android:text="@string/aIndkomstButtonText"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="@+id/dragArbBidrag"
+        app:layout_constraintStart_toEndOf="@+id/dragASkat" />
+
+    <TextView
+        android:id="@+id/dragASkat"
+        android:layout_width="100dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="16dp"
+        android:background="#FFF"
+        android:gravity="center"
+        android:text="@string/aSkatButtonText"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="@+id/dragAIndkomst"
+        app:layout_constraintStart_toEndOf="@+id/dragLoensats" />
+
+    <TextView
+        android:id="@+id/dropASkat"
+        android:layout_width="85dp"
+        android:layout_height="23dp"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="8dp"
+        android:background="@color/colorLightGrey"
+        android:gravity="center"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="@+id/paySlipPart2"
+        app:layout_constraintEnd_toEndOf="@+id/paySlipPart2"
+        app:layout_constraintHorizontal_bias="0.198"
+        app:layout_constraintStart_toStartOf="@+id/paySlipPart2"
+        app:layout_constraintTop_toTopOf="@+id/paySlipPart2"
+        app:layout_constraintVertical_bias="0.587" />
+
+    <TextView
+        android:id="@+id/dropArbBidrag"
+        android:layout_width="84dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@color/colorLightGrey"
+        android:gravity="center"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="@+id/paySlipPart2"
+        app:layout_constraintEnd_toEndOf="@+id/paySlipPart2"
+        app:layout_constraintHorizontal_bias="0.805"
+        app:layout_constraintStart_toStartOf="@+id/paySlipPart2"
+        app:layout_constraintTop_toTopOf="@+id/paySlipPart2"
+        app:layout_constraintVertical_bias="0.356" />
+
+    <TextView
+        android:id="@+id/dropLoensats"
+        android:layout_width="83dp"
+        android:layout_height="23dp"
+        android:layout_marginStart="8dp"
+        android:background="@color/colorLightGrey"
+        android:gravity="center"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="@+id/paySlipPart2"
+        app:layout_constraintEnd_toEndOf="@+id/paySlipPart2"
+        app:layout_constraintHorizontal_bias="0.805"
+        app:layout_constraintStart_toStartOf="@+id/paySlipPart2"
+        app:layout_constraintTop_toTopOf="@+id/paySlipPart2"
+        app:layout_constraintVertical_bias="0.062" />
+
+    <TextView
+        android:id="@+id/dropAIndkomst"
+        android:layout_width="86dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@color/colorLightGrey"
+        android:gravity="center"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="@+id/paySlipPart2"
+        app:layout_constraintEnd_toEndOf="@+id/paySlipPart2"
+        app:layout_constraintHorizontal_bias="0.972"
+        app:layout_constraintStart_toStartOf="@+id/paySlipPart2"
+        app:layout_constraintTop_toTopOf="@+id/paySlipPart2"
+        app:layout_constraintVertical_bias="0.754" />
+
+    <ImageButton
+        android:id="@+id/checkButton"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="8dp"
+        android:background="@android:color/transparent"
+        android:onClick="onClickContinue"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/go_button" />
+
+    <ImageButton
+        android:id="@+id/backButton"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/transparent"
+        android:onClick="onClickAlert"
+        android:scaleType="centerCrop"
+        app:layout_constraintStart_toEndOf="@+id/homeButton"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/back_button" />
+
+    <ImageButton
+        android:id="@+id/homeButton"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/transparent"
+        android:onClick="onClickAlert"
+        android:scaleType="centerCrop"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/home_button" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

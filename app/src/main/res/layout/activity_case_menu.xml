@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient_background"
     android:orientation="horizontal"
+    android:background="@drawable/gradient_background"
     tools:context=".CaseMenu">
 
     <TextView
@@ -16,6 +16,7 @@
         android:text="@string/caseMenuTitle"
         android:textColor="#154677"
         android:textSize="36sp"
+        android:background="@android:color/transparent"
         android:fontFamily="@font/hammersmith_one"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -32,6 +33,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:overScrollMode="never"
+        android:background="@android:color/transparent"
         app:layout_constraintVertical_bias="0.0">
 
         <LinearLayout
@@ -39,6 +41,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="130dp"
             android:layout_marginBottom="52dp"
+            android:background="@android:color/transparent"
             android:orientation="horizontal">
 
             <ImageButton
@@ -50,7 +53,7 @@
                 android:background="@android:color/transparent"
                 android:onClick="onClickCase1"
                 android:scaleType="fitCenter"
-                app:srcCompat="@drawable/supplementcase" />
+                app:srcCompat="@drawable/overview_case" />
 
             <ImageButton
                 android:id="@+id/case2Button"
@@ -75,19 +78,17 @@
         </LinearLayout>
     </HorizontalScrollView>
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="94dp"
-        android:layout_height="45dp"
+    <ImageButton
+        android:id="@+id/backButton"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"
-        android:background="#154677"
-        android:fontFamily="@font/hammersmith_one"
-        android:includeFontPadding="false"
+        android:background="@android:color/transparent"
         android:onClick="onClickBack"
+        android:scaleType="centerCrop"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:text="@string/infoMenuBackButton"/>
+        app:srcCompat="@drawable/back_button" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
