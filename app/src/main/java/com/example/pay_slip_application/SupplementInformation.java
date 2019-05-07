@@ -31,7 +31,6 @@ public class SupplementInformation extends AppCompatActivity {
 
 
 
-        FrameLayout frame = findViewById(R.id.frame);
         VideoView supplementVideo = findViewById(R.id.videoView2);
         String videoPath = "android.resource://" + getPackageName() + "/" + R.raw.supplementvideo;
         Uri uri = Uri.parse(videoPath);
@@ -40,6 +39,6 @@ public class SupplementInformation extends AppCompatActivity {
 
         MediaController mediaController = new MediaController(this);
         supplementVideo.setMediaController(mediaController);
-        mediaController.setAnchorView(frame);
+        mediaController.setAnchorView(supplementVideo);
     }
 }
