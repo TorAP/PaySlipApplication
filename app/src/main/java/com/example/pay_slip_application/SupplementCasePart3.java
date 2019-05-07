@@ -72,7 +72,7 @@ public class SupplementCasePart3 extends SupplementCasePart2 {
     @Override
     public void onClickContinue(View view) {
         if (checkIfPlacedCorrect(dropper1, dropper2)) {
-            Intent intent = new Intent(this, SupplementCasePart3.class);
+            Intent intent = new Intent(this, CaseMenu.class);
             startActivity(intent);
         } else {
             //Makes a toast telling the user they made a mistake
