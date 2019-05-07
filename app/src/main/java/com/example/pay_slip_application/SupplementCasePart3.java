@@ -53,6 +53,11 @@ public class SupplementCasePart3 extends SupplementCasePart2 {
 
     @Override
     public void onClickIntro(View view) {
+        super.onClickIntro(view);
+    }
+
+    @Override
+    public void showIntro() {
         Intent intent = new Intent(this, SupplementCaseIntro.class);
         String message = getResources().getString(R.string.supplementCaseIntro3);
         intent.putExtra(EXTRA_MESSAGE, message);
