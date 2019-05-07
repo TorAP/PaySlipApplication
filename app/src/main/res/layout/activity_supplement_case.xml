@@ -15,8 +15,10 @@
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toTopOf="@+id/dragMonth"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/infoButton"
+        app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/payslipone" />
 
     <TextView
@@ -31,16 +33,16 @@
         android:textColor="@color/colorPrimary"
         app:layout_constraintBottom_toTopOf="@+id/dragMonth"
         app:layout_constraintEnd_toEndOf="@+id/imageView"
-        app:layout_constraintHorizontal_bias="0.614"
+        app:layout_constraintHorizontal_bias="0.607"
         app:layout_constraintStart_toStartOf="@+id/imageView"
         app:layout_constraintTop_toBottomOf="@+id/introButton"
-        app:layout_constraintVertical_bias="0.518" />
+        app:layout_constraintVertical_bias="0.515" />
 
 
     <TextView
         android:id="@+id/dropName"
-        android:layout_width="88dp"
-        android:layout_height="22dp"
+        android:layout_width="92dp"
+        android:layout_height="27dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
         android:background="@color/colorLightGrey"
@@ -49,15 +51,15 @@
         android:textColor="@color/colorPrimary"
         app:layout_constraintBottom_toTopOf="@+id/dragMonth"
         app:layout_constraintEnd_toEndOf="@+id/imageView"
-        app:layout_constraintHorizontal_bias="0.171"
+        app:layout_constraintHorizontal_bias="0.175"
         app:layout_constraintStart_toStartOf="@+id/imageView"
         app:layout_constraintTop_toBottomOf="@+id/infoButton"
-        app:layout_constraintVertical_bias="0.679" />
+        app:layout_constraintVertical_bias="0.68" />
 
     <TextView
         android:id="@+id/dropMonth"
-        android:layout_width="89dp"
-        android:layout_height="26dp"
+        android:layout_width="99dp"
+        android:layout_height="25dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
         android:background="@color/colorLightGrey"
@@ -66,10 +68,10 @@
         android:textColor="@color/colorPrimary"
         app:layout_constraintBottom_toTopOf="@+id/dragMonth"
         app:layout_constraintEnd_toEndOf="@+id/imageView"
-        app:layout_constraintHorizontal_bias="0.792"
+        app:layout_constraintHorizontal_bias="0.759"
         app:layout_constraintStart_toStartOf="@+id/imageView"
         app:layout_constraintTop_toBottomOf="@+id/introButton"
-        app:layout_constraintVertical_bias="0.775" />
+        app:layout_constraintVertical_bias="0.751" />
 
     <TextView
         android:id="@+id/dragName"
