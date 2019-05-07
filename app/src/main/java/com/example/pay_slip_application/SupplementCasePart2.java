@@ -21,7 +21,7 @@ public class SupplementCasePart2 extends SupplementCase {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_supplement_case_part2);
 
-        INTRO_TEXT_SIZE = 15;
+        INTRO_TEXT_SIZE = 13;
 
         dragger1 = (TextView) findViewById(R.id.dragArbBidrag);
         dragger1.setTag(DRAGGER_TAG);
