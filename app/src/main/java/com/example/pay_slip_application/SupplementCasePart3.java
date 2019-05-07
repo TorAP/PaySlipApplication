@@ -83,7 +83,7 @@ public class SupplementCasePart3 extends SupplementCasePart2 {
     }
 
     public boolean checkIfPlacedCorrect(TextView firstView, TextView secondView) {
-        if (firstView.getText().equals(getResources().getString(R.string.loenSatsButton2))
+        if (firstView.getText().equals(getResources().getString(R.string.LoensatsButtonText))
                 && secondView.getText().equals(getResources().getString(R.string.loenTillaegButton))) {
             return true;
         } else {

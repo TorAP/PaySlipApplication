@@ -19,8 +19,7 @@
     <string name="aSkatButtonText">A-Skat</string>
     <string name="DragAndDrop1Jimmy">Jimmy</string>
     <string name="supplementCaseIntro3">Jimmy får, som en del af sin lønseddel, udleveret en oversigt over, hvor mange vagter han har haft, og hvor lange de har været (mængde). De tillæg som han er berettiget til, bliver skrevet som tillægsbeløbet. </string>
-    <string name="loenTillaegButton">23,08 dk</string>
-    <string name="loenSatsButton2">62,16 dk</string>
+    <string name="loenTillaegButton">23,08 kr</string>
     <string name="name">Jimmy</string>
     <string name="cpr">0405021199</string>
     <string name="month">August</string>

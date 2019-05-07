@@ -97,7 +97,7 @@ public class SupplementCase extends AppCompatActivity {
                 // Controls what happens when a drag is started.
                 case DragEvent.ACTION_DRAG_STARTED:
                     View srcView = (View) event.getLocalState();
-                    if (((TextView) v).getText() == "" && (srcView.getTag() != DRAGGER_TAG || srcView.getTag() != v.getTag())) {
+                    if ((srcView.getTag() != DRAGGER_TAG || srcView.getTag() != v.getTag())) {
                         if (event.getClipDescription().hasMimeType(ClipDescription.MIMETYPE_TEXT_PLAIN)) {
 
                             v.setBackgroundColor(getColor(R.color.colorDropZone));
@@ -109,9 +109,7 @@ public class SupplementCase extends AppCompatActivity {
 
                 // Controls what happens when a drag has entered the boundaries of a OnDragListener
                 case DragEvent.ACTION_DRAG_ENTERED:
-                    if (((TextView) v).getText() == "") {
                         v.setBackgroundColor(getColor(R.color.colorEnterDrop));
-                    }
 
                     return true;
 
@@ -128,17 +126,19 @@ public class SupplementCase extends AppCompatActivity {
 
 
                     // Makes sure text can't be dropped if there already is text.
-                    if (((TextView) v).getText() == "") {
                         // Get dragged view object from drag event object.
-                        View view = (View) event.getLocalState();
+                        View draggedView = (View) event.getLocalState();
+                        String draggedText = ((TextView) draggedView).getText().toString();
+                        String targetText = ((TextView) v).getText().toString();
+
                         // Delete text of the dragged view
-                        ((TextView) view).setText("");
+                        ((TextView) draggedView).setText(targetText);
                         // Set text of the OnDragListener to the dragged data (the text from the dragged view)
-                        ((TextView) v).setText(item.getText());
+                        ((TextView) v).setText(draggedText);
 
                         return true;
 
-                    }
+
                 case DragEvent.ACTION_DRAG_LOCATION:
                     return true;
 
