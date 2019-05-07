@@ -69,7 +69,7 @@ public class SupplementCase extends AppCompatActivity {
         @SuppressLint("ClickableViewAccessibility")
         @Override
         public boolean onTouch(View v, MotionEvent event) {
-            if (event.getAction() == MotionEvent.ACTION_DOWN) {
+            if (event.getAction() == MotionEvent.ACTION_DOWN && ((TextView) v).getText() != "") {
                 ClipData.Item item = new ClipData.Item(((TextView) v).getText().toString());
                 String[] mimeTypes = {ClipDescription.MIMETYPE_TEXT_PLAIN};
                 ClipData data = new ClipData(((TextView) v).getText(), mimeTypes, item);
