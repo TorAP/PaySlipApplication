@@ -21,9 +21,7 @@ public class SupplementCase extends AppCompatActivity {
 
     TextView dragger1, dragger2, dragger3, dropper1, dropper2, dropper3;
     static String DRAGGER_TAG = "Drag";
-    static final String EXTRA_MESSAGE = "MESSAGE";
-    static final String EXTRA_TEXT_SIZE = "TEXT SIZE";
-    static int INTRO_TEXT_SIZE;
+    static final String EXTRA_VIDEO_PATH = "VIDEO PATH";
     final public String TOAST_MESSAGE = "Du har lavet en fejl. Prøv igen";
 
 
@@ -33,7 +31,6 @@ public class SupplementCase extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_supplement_case);
 
-        INTRO_TEXT_SIZE = 18;
 
         dragger1 = (TextView) findViewById(R.id.dragName);
         dragger1.setTag(DRAGGER_TAG);
@@ -176,9 +173,8 @@ public class SupplementCase extends AppCompatActivity {
 
     public void showIntro() {
         Intent intent = new Intent(this, SupplementCaseIntro.class);
-        String message = getResources().getString(R.string.supplementCaseIntro1);
-        intent.putExtra(EXTRA_MESSAGE, message);
-        intent.putExtra(EXTRA_TEXT_SIZE, INTRO_TEXT_SIZE);
+        String videoPath = "android.resource://" + getPackageName() + "/" + R.raw.supplementvideo;
+        intent.putExtra(EXTRA_VIDEO_PATH, videoPath);
         startActivity(intent);
     }
 

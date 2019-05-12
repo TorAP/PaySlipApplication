@@ -3,17 +3,21 @@ package com.example.pay_slip_application;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.View;
+import android.widget.MediaController;
 import android.widget.TextView;
+import android.widget.VideoView;
 
 public class SupplementCaseIntro extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_supplement_case_intro);
+        setContentView(R.layout.activity_supplement_information);
+
 
         //Get's the size of the screen
         DisplayMetrics displayMetrics = new DisplayMetrics();
@@ -22,19 +26,26 @@ public class SupplementCaseIntro extends AppCompatActivity {
         int width = displayMetrics.widthPixels;
         int height = displayMetrics.heightPixels;
         //set the window to not fill the entire screen
-        getWindow().setLayout((int)(width*0.9),(int)(height*0.7));
+        getWindow().setLayout((int)(width*0.8),(int)(height*0.8));
 
+
+
+
+        VideoView supplementVideo = findViewById(R.id.videoView2);
         Intent intent = getIntent();
-        String message = intent.getStringExtra("MESSAGE");
-        int textSize = intent.getIntExtra("TEXT SIZE", SupplementCase.INTRO_TEXT_SIZE);
+        intent.getExtras().getString()
+        String videoPath = "android.resource://" + getPackageName() + "/" + R.raw.supplementvideo;
+        Uri uri = Uri.parse(videoPath);
+        supplementVideo.setVideoURI(uri);
+        supplementVideo.start();
 
-        TextView textView = (TextView) findViewById(R.id.supplementCaseIntroText);
-        textView.setText(message);
-        textView.setTextSize(textSize);
+        MediaController mediaController = new MediaController(this);
+        supplementVideo.setMediaController(mediaController);
+        mediaController.setAnchorView(supplementVideo);
     }
 
-    public void onBackPressed(View view) {
-        onBackPressed();
+    public void closeVideo(View view) {
+        super.onBackPressed();
     }
 }
 
