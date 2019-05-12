@@ -42,4 +42,8 @@ public class SupplementInformation extends AppCompatActivity {
         supplementVideo.setMediaController(mediaController);
         mediaController.setAnchorView(supplementVideo);
     }
+
+    public void closeVideo(View view) {
+        super.onBackPressed();
+    }
 }

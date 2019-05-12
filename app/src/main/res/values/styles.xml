@@ -4,7 +4,6 @@
     <style name="AppTheme" parent="Theme.AppCompat.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">#154677</item>
-        <item name="android:fontFamily">@font/hammersmith_one</item>
         <item name="android:orientation">horizontal</item>
     </style>
     

@@ -109,7 +109,7 @@ public class SupplementCase extends AppCompatActivity {
 
                 // Controls what happens when a drag has entered the boundaries of a OnDragListener
                 case DragEvent.ACTION_DRAG_ENTERED:
-                        v.setBackgroundColor(getColor(R.color.colorEnterDrop));
+                    v.setBackgroundColor(getColor(R.color.colorEnterDrop));
 
                     return true;
 
@@ -126,17 +126,17 @@ public class SupplementCase extends AppCompatActivity {
 
 
                     // Makes sure text can't be dropped if there already is text.
-                        // Get dragged view object from drag event object.
-                        View draggedView = (View) event.getLocalState();
-                        String draggedText = ((TextView) draggedView).getText().toString();
-                        String targetText = ((TextView) v).getText().toString();
+                    // Get dragged view object from drag event object.
+                    View draggedView = (View) event.getLocalState();
+                    String draggedText = ((TextView) draggedView).getText().toString();
+                    String targetText = ((TextView) v).getText().toString();
 
-                        // Delete text of the dragged view
-                        ((TextView) draggedView).setText(targetText);
-                        // Set text of the OnDragListener to the dragged data (the text from the dragged view)
-                        ((TextView) v).setText(draggedText);
+                    // Delete text of the dragged view
+                    ((TextView) draggedView).setText(targetText);
+                    // Set text of the OnDragListener to the dragged data (the text from the dragged view)
+                    ((TextView) v).setText(draggedText);
 
-                        return true;
+                    return true;
 
 
                 case DragEvent.ACTION_DRAG_LOCATION:
@@ -178,7 +178,7 @@ public class SupplementCase extends AppCompatActivity {
         Intent intent = new Intent(this, SupplementCaseIntro.class);
         String message = getResources().getString(R.string.supplementCaseIntro1);
         intent.putExtra(EXTRA_MESSAGE, message);
-        intent.putExtra(EXTRA_TEXT_SIZE,INTRO_TEXT_SIZE);
+        intent.putExtra(EXTRA_TEXT_SIZE, INTRO_TEXT_SIZE);
         startActivity(intent);
     }
 
@@ -187,15 +187,15 @@ public class SupplementCase extends AppCompatActivity {
     public void onClickAlert(final View view) {
         AlertDialog.Builder builder = new AlertDialog.Builder(SupplementCase.this);
 
-        builder.setTitle("Gå tilbage");
+        builder.setTitle("Afslut case");
 
-        builder.setMessage("Hvis du aflutter vil dine fremskridt ikke blive gemt");
+        builder.setMessage("Er du sikker på, at du vil afslutte? Dine fremskridt vil ikke blive gemt");
 
         builder.setIcon(R.drawable.alert_iconmdpi);
 
         builder.setCancelable(true);
 
-        builder.setPositiveButton("Ja!", new DialogInterface.OnClickListener() {
+        builder.setPositiveButton("Ja, afslut", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 ImageButton backButton = (ImageButton) findViewById(R.id.backButton);
@@ -211,7 +211,7 @@ public class SupplementCase extends AppCompatActivity {
             }
         });
 
-        builder.setNegativeButton("Nej!", new DialogInterface.OnClickListener() {
+        builder.setNegativeButton("Nej", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
 
