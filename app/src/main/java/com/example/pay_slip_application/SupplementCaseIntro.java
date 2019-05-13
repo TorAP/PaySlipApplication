@@ -30,11 +30,10 @@ public class SupplementCaseIntro extends AppCompatActivity {
 
 
 
+        Intent intent = getIntent();
+        String videoPath = intent.getStringExtra("VIDEO PATH");
 
         VideoView supplementVideo = findViewById(R.id.videoView2);
-        Intent intent = getIntent();
-        intent.getExtras().getString()
-        String videoPath = "android.resource://" + getPackageName() + "/" + R.raw.supplementvideo;
         Uri uri = Uri.parse(videoPath);
         supplementVideo.setVideoURI(uri);
         supplementVideo.start();

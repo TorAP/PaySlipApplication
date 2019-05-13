@@ -23,7 +23,6 @@ public class SupplementCasePart2 extends SupplementCase {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_supplement_case_part2);
 
-        INTRO_TEXT_SIZE = 13;
 
         dragger1 = (TextView) findViewById(R.id.dragArbBidrag);
         dragger1.setTag(DRAGGER_TAG);
@@ -73,10 +72,7 @@ public class SupplementCasePart2 extends SupplementCase {
     }
 
     public void showIntro() {
-        Intent intent = new Intent(this, SupplementCaseIntro.class);
-        String message = getResources().getString(R.string.supplementCaseIntro2);
-        intent.putExtra(EXTRA_MESSAGE, message);
-        startActivity(intent);
+        super.showIntro();
     }
 
     @Override
