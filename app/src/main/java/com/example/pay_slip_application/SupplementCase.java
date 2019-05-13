@@ -30,7 +30,7 @@ public class SupplementCase extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_supplement_case);
 
-        INTRO_TEXT_SIZE = 20;
+        INTRO_TEXT_SIZE = 18;
 
         dragger1 = (TextView) findViewById(R.id.dragName);
         dragger1.setTag(DRAGGER_TAG);
