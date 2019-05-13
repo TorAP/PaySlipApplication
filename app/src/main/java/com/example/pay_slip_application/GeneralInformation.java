@@ -2,19 +2,17 @@ package com.example.pay_slip_application;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.MediaController;
-import android.widget.TextView;
 import android.widget.VideoView;
 
-public class SupplementCaseIntro extends AppCompatActivity {
+public class GeneralInformation extends AppCompatActivity {
 
-    VideoView introVideo;
+    VideoView generalVideo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,30 +31,23 @@ public class SupplementCaseIntro extends AppCompatActivity {
 
 
 
-        Intent intent = getIntent();
-        String videoPath = intent.getStringExtra("VIDEO PATH");
 
-        introVideo = findViewById(R.id.videoView2);
+        generalVideo = findViewById(R.id.videoView2);
+        String videoPath = "android.resource://" + getPackageName() + "/" + R.raw.generalvideo;
         Uri uri = Uri.parse(videoPath);
-        introVideo.setVideoURI(uri);
-        introVideo.start();
+        generalVideo.setVideoURI(uri);
+        generalVideo.start();
 
         MediaController mediaController = new MediaController(this);
-        introVideo.setMediaController(mediaController);
-        mediaController.setAnchorView(introVideo);
+        generalVideo.setMediaController(mediaController);
+        mediaController.setAnchorView(generalVideo);
 
 
-        // Close activity after video has played
-        introVideo.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-            @Override
-            public void onCompletion(MediaPlayer mp) {
-                finish();
-            }
-        });
     }
 
     public void closeVideo(View view) {
         super.onBackPressed();
     }
-}
 
+
+}

@@ -19,6 +19,11 @@ public class InformationMenu extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void onClickGeneralInfoButton(View view){
+        Intent intent = new Intent(this, GeneralInformation.class);
+        startActivity(intent);
+    }
+
     public void onClickInfoMenuBackButton(View view){
         onBackPressed();
     }

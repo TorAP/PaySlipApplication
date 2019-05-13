@@ -61,9 +61,9 @@ public class SupplementCasePart2 extends SupplementCase {
     }
 
 
+    @Override
     public void onClickInfo(View view) {
-        Intent intent = new Intent(this, SupplementInformation.class);
-        startActivity(intent);
+        super.onClickInfo(view);
     }
 
     @Override
@@ -72,7 +72,10 @@ public class SupplementCasePart2 extends SupplementCase {
     }
 
     public void showIntro() {
-        super.showIntro();
+        Intent intent = new Intent(this, SupplementCaseIntro.class);
+        String videoPath = "android.resource://" + getPackageName() + "/" + R.raw.introvideo_part2;
+        intent.putExtra(EXTRA_VIDEO_PATH, videoPath);
+        startActivity(intent);
     }
 
     @Override

@@ -155,7 +155,7 @@ public class SupplementCase extends AppCompatActivity {
 
 
     public void onClickInfo(View view) {
-        Intent intent = new Intent(this, SupplementInformation.class);
+        Intent intent = new Intent(this, GeneralInformation.class);
         startActivity(intent);
     }
 
@@ -173,7 +173,7 @@ public class SupplementCase extends AppCompatActivity {
 
     public void showIntro() {
         Intent intent = new Intent(this, SupplementCaseIntro.class);
-        String videoPath = "android.resource://" + getPackageName() + "/" + R.raw.supplementvideo;
+        String videoPath = "android.resource://" + getPackageName() + "/" + R.raw.introvideo_part1;
         intent.putExtra(EXTRA_VIDEO_PATH, videoPath);
         startActivity(intent);
     }
