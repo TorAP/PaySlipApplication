@@ -3,6 +3,7 @@ package com.example.pay_slip_application;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.ClipData;
 import android.content.ClipDescription;
 import android.content.DialogInterface;
@@ -10,6 +11,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.DragEvent;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -19,18 +21,16 @@ public class SupplementCase extends AppCompatActivity {
 
     TextView dragger1, dragger2, dragger3, dropper1, dropper2, dropper3;
     static String DRAGGER_TAG = "Drag";
-    static final String EXTRA_MESSAGE = "MESSAGE";
-    static final String EXTRA_TEXT_SIZE = "TEXT SIZE";
-    static int INTRO_TEXT_SIZE;
+    static final String EXTRA_VIDEO_PATH = "VIDEO PATH";
     final public String TOAST_MESSAGE = "Du har lavet en fejl. Prøv igen";
 
 
+    @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_supplement_case);
 
-        INTRO_TEXT_SIZE = 18;
 
         dragger1 = (TextView) findViewById(R.id.dragName);
         dragger1.setTag(DRAGGER_TAG);
@@ -44,12 +44,12 @@ public class SupplementCase extends AppCompatActivity {
         dropper3 = (TextView) findViewById(R.id.dropMonth);
 
 
-        dragger1.setOnLongClickListener(longClickListener);
-        dragger2.setOnLongClickListener(longClickListener);
-        dragger3.setOnLongClickListener(longClickListener);
-        dropper1.setOnLongClickListener(longClickListener);
-        dropper2.setOnLongClickListener(longClickListener);
-        dropper3.setOnLongClickListener(longClickListener);
+        dragger1.setOnTouchListener(onTouchListener);
+        dragger2.setOnTouchListener(onTouchListener);
+        dragger3.setOnTouchListener(onTouchListener);
+        dropper1.setOnTouchListener(onTouchListener);
+        dropper2.setOnTouchListener(onTouchListener);
+        dropper3.setOnTouchListener(onTouchListener);
 
         dragger1.setOnDragListener(dragListener);
         dragger2.setOnDragListener(dragListener);
@@ -62,28 +62,23 @@ public class SupplementCase extends AppCompatActivity {
     }
 
     // A Callback Method, which detects if objects of the View-class has been clicked
-    View.OnLongClickListener longClickListener = new View.OnLongClickListener() {
-
+    View.OnTouchListener onTouchListener = new View.OnTouchListener() {
+        @SuppressLint("ClickableViewAccessibility")
         @Override
-        public boolean onLongClick(View v) {
-
-            if (((TextView) v).getText() != "") {
+        public boolean onTouch(View v, MotionEvent event) {
+            if (event.getAction() == MotionEvent.ACTION_DOWN && ((TextView) v).getText() != "") {
                 ClipData.Item item = new ClipData.Item(((TextView) v).getText().toString());
                 String[] mimeTypes = {ClipDescription.MIMETYPE_TEXT_PLAIN};
-
-
                 ClipData data = new ClipData(((TextView) v).getText(), mimeTypes, item);
 
-                View.DragShadowBuilder myShadow = new View.DragShadowBuilder(v);
 
-                v.startDragAndDrop(data, myShadow, v, 0);
-
-                //v.setVisibility(View.INVISIBLE);
+                View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(v);
+                v.startDragAndDrop(data, shadowBuilder, v, 0);
                 return true;
-            } else return false;
+            } else {
+                return false;
+            }
         }
-
-
     };
 
     // Callback method that detects different actions of a view being dragged
@@ -99,7 +94,7 @@ public class SupplementCase extends AppCompatActivity {
                 // Controls what happens when a drag is started.
                 case DragEvent.ACTION_DRAG_STARTED:
                     View srcView = (View) event.getLocalState();
-                    if (((TextView) v).getText() == "" && (srcView.getTag() != DRAGGER_TAG || srcView.getTag() != v.getTag())) {
+                    if ((srcView.getTag() != DRAGGER_TAG || srcView.getTag() != v.getTag())) {
                         if (event.getClipDescription().hasMimeType(ClipDescription.MIMETYPE_TEXT_PLAIN)) {
 
                             v.setBackgroundColor(getColor(R.color.colorDropZone));
@@ -111,9 +106,7 @@ public class SupplementCase extends AppCompatActivity {
 
                 // Controls what happens when a drag has entered the boundaries of a OnDragListener
                 case DragEvent.ACTION_DRAG_ENTERED:
-                    if (((TextView) v).getText() == "") {
-                        v.setBackgroundColor(getColor(R.color.colorEnterDrop));
-                    }
+                    v.setBackgroundColor(getColor(R.color.colorEnterDrop));
 
                     return true;
 
@@ -130,17 +123,19 @@ public class SupplementCase extends AppCompatActivity {
 
 
                     // Makes sure text can't be dropped if there already is text.
-                    if (((TextView) v).getText() == "") {
-                        // Get dragged view object from drag event object.
-                        View view = (View) event.getLocalState();
-                        // Delete text of the dragged view
-                        ((TextView) view).setText("");
-                        // Set text of the OnDragListener to the dragged data (the text from the dragged view)
-                        ((TextView) v).setText(item.getText());
+                    // Get dragged view object from drag event object.
+                    View draggedView = (View) event.getLocalState();
+                    String draggedText = ((TextView) draggedView).getText().toString();
+                    String targetText = ((TextView) v).getText().toString();
 
-                        return true;
+                    // Delete text of the dragged view
+                    ((TextView) draggedView).setText(targetText);
+                    // Set text of the OnDragListener to the dragged data (the text from the dragged view)
+                    ((TextView) v).setText(draggedText);
 
-                    }
+                    return true;
+
+
                 case DragEvent.ACTION_DRAG_LOCATION:
                     return true;
 
@@ -156,17 +151,11 @@ public class SupplementCase extends AppCompatActivity {
             return false;
         }
 
-            /*textView.animate()
-                    .x(textView3.getX())
-                    .y(textView3.getY())
-                    .setDuration(10)
-                    .start();*/
-
     };
 
 
     public void onClickInfo(View view) {
-        Intent intent = new Intent(this, SupplementInformation.class);
+        Intent intent = new Intent(this, GeneralInformation.class);
         startActivity(intent);
     }
 
@@ -184,9 +173,8 @@ public class SupplementCase extends AppCompatActivity {
 
     public void showIntro() {
         Intent intent = new Intent(this, SupplementCaseIntro.class);
-        String message = getResources().getString(R.string.supplementCaseIntro1);
-        intent.putExtra(EXTRA_MESSAGE, message);
-        intent.putExtra(EXTRA_TEXT_SIZE,INTRO_TEXT_SIZE);
+        String videoPath = "android.resource://" + getPackageName() + "/" + R.raw.introvideo_part1;
+        intent.putExtra(EXTRA_VIDEO_PATH, videoPath);
         startActivity(intent);
     }
 
@@ -195,15 +183,15 @@ public class SupplementCase extends AppCompatActivity {
     public void onClickAlert(final View view) {
         AlertDialog.Builder builder = new AlertDialog.Builder(SupplementCase.this);
 
-        builder.setTitle("Gå tilbage");
+        builder.setTitle("Afslut case");
 
-        builder.setMessage("Hvis du aflutter vil dine fremskridt ikke blive gemt");
+        builder.setMessage("Er du sikker på, at du vil afslutte? Dine fremskridt vil ikke blive gemt");
 
         builder.setIcon(R.drawable.alert_iconmdpi);
 
         builder.setCancelable(true);
 
-        builder.setPositiveButton("Ja!", new DialogInterface.OnClickListener() {
+        builder.setPositiveButton("Ja, afslut", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 ImageButton backButton = (ImageButton) findViewById(R.id.backButton);
@@ -219,7 +207,7 @@ public class SupplementCase extends AppCompatActivity {
             }
         });
 
-        builder.setNegativeButton("Nej!", new DialogInterface.OnClickListener() {
+        builder.setNegativeButton("Nej", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
 

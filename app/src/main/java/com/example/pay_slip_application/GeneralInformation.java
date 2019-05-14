@@ -2,14 +2,17 @@ package com.example.pay_slip_application;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
-import android.widget.FrameLayout;
+import android.view.View;
 import android.widget.MediaController;
 import android.widget.VideoView;
 
-public class SupplementInformation extends AppCompatActivity {
+public class GeneralInformation extends AppCompatActivity {
+
+    VideoView generalVideo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,15 +30,17 @@ public class SupplementInformation extends AppCompatActivity {
         getWindow().setLayout((int)(width*0.8),(int)(height*0.8));
 
 
-        VideoView supplementVideo = findViewById(R.id.videoView2);
-        String videoPath = "android.resource://" + getPackageName() + "/" + R.raw.supplementvideo;
+
+
+        generalVideo = findViewById(R.id.videoView2);
+        String videoPath = "android.resource://" + getPackageName() + "/" + R.raw.generalvideo;
         Uri uri = Uri.parse(videoPath);
-        supplementVideo.setVideoURI(uri);
-        supplementVideo.start();
+        generalVideo.setVideoURI(uri);
+        generalVideo.start();
 
         MediaController mediaController = new MediaController(this);
-        mediaController.setAnchorView(supplementVideo);
-        supplementVideo.setMediaController(mediaController);
+        generalVideo.setMediaController(mediaController);
+        mediaController.setAnchorView(generalVideo);
 
 
     }
@@ -43,4 +48,6 @@ public class SupplementInformation extends AppCompatActivity {
     public void closeVideo(View view) {
         super.onBackPressed();
     }
+
+
 }

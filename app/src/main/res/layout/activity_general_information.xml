@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SupplementInformation"
+    tools:context=".generalInformation"
     android:background="@drawable/popup_background">
 
     <FrameLayout
@@ -22,7 +22,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <VideoView
-            android:id="@+id/introVideo"
+            android:id="@+id/videoView"
             android:layout_width="525dp"
             android:layout_height="259dp" />
 

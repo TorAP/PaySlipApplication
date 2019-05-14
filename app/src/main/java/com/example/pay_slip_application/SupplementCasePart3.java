@@ -2,6 +2,7 @@ package com.example.pay_slip_application;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.ClipData;
 import android.content.ClipDescription;
 import android.content.Intent;
@@ -17,12 +18,12 @@ public class SupplementCasePart3 extends SupplementCasePart2 {
 
     private static String DRAGGER_TAG = "Drag";
 
+    @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_supplement_case_part3);
 
-        INTRO_TEXT_SIZE = 24;
 
         dragger1 = (TextView) findViewById(R.id.dragLoensats);
         dragger1.setTag(DRAGGER_TAG);
@@ -33,10 +34,10 @@ public class SupplementCasePart3 extends SupplementCasePart2 {
         dropper1 = (TextView) findViewById(R.id.dropLoensats);
         dropper2 = (TextView) findViewById(R.id.dropLoentillæg);
 
-        dragger1.setOnLongClickListener(longClickListener);
-        dragger2.setOnLongClickListener(longClickListener);
-        dropper1.setOnLongClickListener(longClickListener);
-        dropper2.setOnLongClickListener(longClickListener);
+        dragger1.setOnTouchListener(onTouchListener);
+        dragger2.setOnTouchListener(onTouchListener);
+        dropper1.setOnTouchListener(onTouchListener);
+        dropper2.setOnTouchListener(onTouchListener);
 
         dragger1.setOnDragListener(dragListener);
         dragger2.setOnDragListener(dragListener);
@@ -46,9 +47,9 @@ public class SupplementCasePart3 extends SupplementCasePart2 {
 
     }
 
+    @Override
     public void onClickInfo(View view) {
-        Intent intent = new Intent(this, SupplementInformation.class);
-        startActivity(intent);
+        super.onClickInfo(view);
     }
 
     @Override
@@ -59,8 +60,8 @@ public class SupplementCasePart3 extends SupplementCasePart2 {
     @Override
     public void showIntro() {
         Intent intent = new Intent(this, SupplementCaseIntro.class);
-        String message = getResources().getString(R.string.supplementCaseIntro3);
-        intent.putExtra(EXTRA_MESSAGE, message);
+        String videoPath = "android.resource://" + getPackageName() + "/" + R.raw.introvideo_part3;
+        intent.putExtra(EXTRA_VIDEO_PATH, videoPath);
         startActivity(intent);
     }
 
@@ -81,7 +82,7 @@ public class SupplementCasePart3 extends SupplementCasePart2 {
     }
 
     public boolean checkIfPlacedCorrect(TextView firstView, TextView secondView) {
-        if (firstView.getText().equals(getResources().getString(R.string.loenSatsButton2))
+        if (firstView.getText().equals(getResources().getString(R.string.LoensatsButtonText))
                 && secondView.getText().equals(getResources().getString(R.string.loenTillaegButton))) {
             return true;
         } else {
