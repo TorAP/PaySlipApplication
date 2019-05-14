@@ -12,7 +12,6 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
         <activity android:name=".GeneralInformation"
-            android:screenOrientation="landscape"
             android:theme="@style/PopUpTheme"/>
         <activity
             android:name=".SupplementCasePart3"
