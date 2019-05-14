@@ -2,14 +2,11 @@ package com.example.pay_slip_application;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
-import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.MediaController;
-import android.widget.Toast;
 import android.widget.VideoView;
 
 public class SupplementInformation extends AppCompatActivity {
@@ -30,8 +27,6 @@ public class SupplementInformation extends AppCompatActivity {
         getWindow().setLayout((int)(width*0.8),(int)(height*0.8));
 
 
-
-
         VideoView supplementVideo = findViewById(R.id.videoView2);
         String videoPath = "android.resource://" + getPackageName() + "/" + R.raw.supplementvideo;
         Uri uri = Uri.parse(videoPath);
@@ -39,7 +34,9 @@ public class SupplementInformation extends AppCompatActivity {
         supplementVideo.start();
 
         MediaController mediaController = new MediaController(this);
-        supplementVideo.setMediaController(mediaController);
         mediaController.setAnchorView(supplementVideo);
+        supplementVideo.setMediaController(mediaController);
+
+
     }
 }
