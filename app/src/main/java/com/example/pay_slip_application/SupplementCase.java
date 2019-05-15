@@ -8,7 +8,6 @@ import android.content.ClipData;
 import android.content.ClipDescription;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.DragEvent;
 import android.view.MotionEvent;
@@ -61,7 +60,7 @@ public class SupplementCase extends AppCompatActivity {
         showIntro();
     }
 
-    // A Callback Method, which detects if objects of the View-class has been clicked
+    // An interface which detects if objects of the View-class has been clicked
     View.OnTouchListener onTouchListener = new View.OnTouchListener() {
         @SuppressLint("ClickableViewAccessibility")
         @Override
@@ -118,19 +117,15 @@ public class SupplementCase extends AppCompatActivity {
 
                 // Controls what happens when a dragged view is dropped on a OnDragListener
                 case DragEvent.ACTION_DROP:
-                    // Gets the item containing the dragged data
-                    ClipData.Item item = event.getClipData().getItemAt(0);
 
-
-                    // Makes sure text can't be dropped if there already is text.
                     // Get dragged view object from drag event object.
                     View draggedView = (View) event.getLocalState();
                     String draggedText = ((TextView) draggedView).getText().toString();
                     String targetText = ((TextView) v).getText().toString();
 
-                    // Delete text of the dragged view
+                    // Set text of the dragged view to the text of the target view
                     ((TextView) draggedView).setText(targetText);
-                    // Set text of the OnDragListener to the dragged data (the text from the dragged view)
+                    // Set text of the target view to the text from the dragged view
                     ((TextView) v).setText(draggedText);
 
                     return true;
