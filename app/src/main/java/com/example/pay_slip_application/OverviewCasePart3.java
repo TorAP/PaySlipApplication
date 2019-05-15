@@ -9,9 +9,7 @@ import android.widget.Toast;
 
 public class OverviewCasePart3 extends OverviewCasePart2 {
 
-
-    private static String DRAGGER_TAG = "Drag";
-
+    
     @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(Bundle savedInstanceState) {

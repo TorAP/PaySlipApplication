@@ -14,7 +14,7 @@ public class CaseMenu extends AppCompatActivity {
         setContentView(R.layout.activity_case_menu);
     }
 
-    public void onClickCase1(View view) {
+    public void onClickCase(View view) {
            Intent intent = new Intent(this, OverviewCase.class);
            startActivity(intent);
     }

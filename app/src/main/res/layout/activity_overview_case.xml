@@ -8,7 +8,7 @@
     tools:context=".OverviewCase">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/paySlipPart1"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="8dp"
@@ -32,9 +32,9 @@
         android:textAlignment="center"
         android:textColor="@color/colorPrimary"
         app:layout_constraintBottom_toTopOf="@+id/dragMonth"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="@+id/paySlipPart1"
         app:layout_constraintHorizontal_bias="0.607"
-        app:layout_constraintStart_toStartOf="@+id/imageView"
+        app:layout_constraintStart_toStartOf="@+id/paySlipPart1"
         app:layout_constraintTop_toBottomOf="@+id/introButton"
         app:layout_constraintVertical_bias="0.515" />
 
@@ -50,9 +50,9 @@
         android:textAlignment="center"
         android:textColor="@color/colorPrimary"
         app:layout_constraintBottom_toTopOf="@+id/dragMonth"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="@+id/paySlipPart1"
         app:layout_constraintHorizontal_bias="0.175"
-        app:layout_constraintStart_toStartOf="@+id/imageView"
+        app:layout_constraintStart_toStartOf="@+id/paySlipPart1"
         app:layout_constraintTop_toBottomOf="@+id/infoButton"
         app:layout_constraintVertical_bias="0.68" />
 
@@ -67,9 +67,9 @@
         android:textAlignment="center"
         android:textColor="@color/colorPrimary"
         app:layout_constraintBottom_toTopOf="@+id/dragMonth"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="@+id/paySlipPart1"
         app:layout_constraintHorizontal_bias="0.759"
-        app:layout_constraintStart_toStartOf="@+id/imageView"
+        app:layout_constraintStart_toStartOf="@+id/paySlipPart1"
         app:layout_constraintTop_toBottomOf="@+id/introButton"
         app:layout_constraintVertical_bias="0.751" />
 

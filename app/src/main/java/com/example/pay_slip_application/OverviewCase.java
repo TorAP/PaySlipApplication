@@ -19,9 +19,9 @@ import android.widget.Toast;
 public class OverviewCase extends AppCompatActivity {
 
     TextView dragger1, dragger2, dragger3, dropper1, dropper2, dropper3;
-    static String DRAGGER_TAG = "Drag";
-    static final String EXTRA_VIDEO_PATH = "VIDEO PATH";
-    final public String TOAST_MESSAGE = "Du har lavet en fejl. Prøv igen";
+    public static String DRAGGER_TAG = "Drag";
+    public static final String EXTRA_VIDEO_PATH = "VIDEO PATH";
+    public final String TOAST_MESSAGE = "Du har lavet en fejl. Prøv igen";
 
 
     @SuppressLint("ClickableViewAccessibility")

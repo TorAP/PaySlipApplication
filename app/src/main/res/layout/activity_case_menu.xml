@@ -23,7 +23,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <HorizontalScrollView
-        android:id="@+id/horizontalScrollView"
+        android:id="@+id/caseMenuScroll"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginBottom="16dp"
@@ -45,13 +45,13 @@
             android:orientation="horizontal">
 
             <ImageButton
-                android:id="@+id/case1Button"
+                android:id="@+id/overviewCaseButton"
                 android:layout_width="200dp"
                 android:layout_height="match_parent"
                 android:layout_marginStart="70dp"
                 android:layout_weight="1"
                 android:background="@android:color/transparent"
-                android:onClick="onClickCase1"
+                android:onClick="onClickCase"
                 android:scaleType="fitCenter"
                 app:srcCompat="@drawable/overview_case" />
 
