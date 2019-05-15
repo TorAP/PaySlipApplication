@@ -12,7 +12,7 @@ import android.widget.MediaController;
 import android.widget.TextView;
 import android.widget.VideoView;
 
-public class SupplementCaseIntro extends AppCompatActivity {
+public class OverviewCaseIntro extends AppCompatActivity {
 
     VideoView introVideo;
 

@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.HorizontalScrollView;
 
 public class CaseMenu extends AppCompatActivity {
 
@@ -16,7 +15,7 @@ public class CaseMenu extends AppCompatActivity {
     }
 
     public void onClickCase1(View view) {
-           Intent intent = new Intent(this, SupplementCase.class);
+           Intent intent = new Intent(this, OverviewCase.class);
            startActivity(intent);
     }
 

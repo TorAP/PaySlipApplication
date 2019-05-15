@@ -1,19 +1,13 @@
 package com.example.pay_slip_application;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.annotation.SuppressLint;
-import android.content.ClipData;
-import android.content.ClipDescription;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
-import android.view.DragEvent;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class SupplementCasePart2 extends SupplementCase {
+public class OverviewCasePart2 extends OverviewCase {
 
     TextView dragger4, dropper4;
 
@@ -21,7 +15,7 @@ public class SupplementCasePart2 extends SupplementCase {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_supplement_case_part2);
+        setContentView(R.layout.activity_overview_case_part2);
 
 
         dragger1 = (TextView) findViewById(R.id.dragArbBidrag);
@@ -72,7 +66,7 @@ public class SupplementCasePart2 extends SupplementCase {
     }
 
     public void showIntro() {
-        Intent intent = new Intent(this, SupplementCaseIntro.class);
+        Intent intent = new Intent(this, OverviewCaseIntro.class);
         String videoPath = "android.resource://" + getPackageName() + "/" + R.raw.introvideo_part2;
         intent.putExtra(EXTRA_VIDEO_PATH, videoPath);
         startActivity(intent);
@@ -86,7 +80,7 @@ public class SupplementCasePart2 extends SupplementCase {
     @Override
     public void onClickContinue(View view) {
         if (checkIfPlacedCorrect(dropper1, dropper2, dropper3, dropper4)) {
-            Intent intent = new Intent(this, SupplementCasePart3.class);
+            Intent intent = new Intent(this, OverviewCasePart3.class);
             startActivity(intent);
         } else {
             //Makes a toast telling the user they made a mistake
