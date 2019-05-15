@@ -14,13 +14,13 @@
         <activity android:name=".GeneralInformation"
             android:theme="@style/PopUpTheme"/>
         <activity
-            android:name=".SupplementCasePart3"
+            android:name=".OverviewCasePart3"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".SupplementCasePart2"
+            android:name=".OverviewCasePart2"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".SupplementCaseIntro"
+            android:name=".OverviewCaseIntro"
             android:theme="@style/PopUpTheme" />
         <activity
             android:name=".MainActivity"
@@ -38,7 +38,7 @@
             android:name=".InformationMenu"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".SupplementCase"
+            android:name=".OverviewCase"
             android:screenOrientation="landscape" />
         <activity
             android:name=".SupplementInformation"

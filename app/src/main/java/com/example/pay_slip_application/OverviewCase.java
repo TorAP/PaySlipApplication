@@ -8,7 +8,6 @@ import android.content.ClipData;
 import android.content.ClipDescription;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.DragEvent;
 import android.view.MotionEvent;
@@ -17,7 +16,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class SupplementCase extends AppCompatActivity {
+public class OverviewCase extends AppCompatActivity {
 
     TextView dragger1, dragger2, dragger3, dropper1, dropper2, dropper3;
     static String DRAGGER_TAG = "Drag";
@@ -29,7 +28,7 @@ public class SupplementCase extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_supplement_case);
+        setContentView(R.layout.activity_overview_case);
 
 
         dragger1 = (TextView) findViewById(R.id.dragName);
@@ -162,7 +161,7 @@ public class SupplementCase extends AppCompatActivity {
 
     public void onClickContinue(View view) {
         if (checkIfPlacedCorrect(dropper1, dropper2, dropper3)) {
-            Intent intent = new Intent(this, SupplementCasePart2.class);
+            Intent intent = new Intent(this, OverviewCasePart2.class);
             startActivity(intent);
         } else {
             //Makes a toast telling the user they made a mistake
@@ -172,7 +171,7 @@ public class SupplementCase extends AppCompatActivity {
 
 
     public void showIntro() {
-        Intent intent = new Intent(this, SupplementCaseIntro.class);
+        Intent intent = new Intent(this, OverviewCaseIntro.class);
         String videoPath = "android.resource://" + getPackageName() + "/" + R.raw.introvideo_part1;
         intent.putExtra(EXTRA_VIDEO_PATH, videoPath);
         startActivity(intent);
@@ -181,7 +180,7 @@ public class SupplementCase extends AppCompatActivity {
 
     //Alert dialog
     public void onClickAlert(final View view) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(SupplementCase.this);
+        AlertDialog.Builder builder = new AlertDialog.Builder(OverviewCase.this);
 
         builder.setTitle("Afslut case");
 
