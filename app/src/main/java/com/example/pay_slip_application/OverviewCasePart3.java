@@ -9,7 +9,7 @@ import android.widget.Toast;
 
 public class OverviewCasePart3 extends OverviewCasePart2 {
 
-    
+
     @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
