@@ -14,15 +14,18 @@ public class CaseMenu extends AppCompatActivity {
         setContentView(R.layout.activity_case_menu);
     }
 
+    // opens the OverviewCase screen
     public void onClickCase(View view) {
            Intent intent = new Intent(this, OverviewCase.class);
            startActivity(intent);
     }
 
+    // Goes back to the MainActivity screen
     public void onClickBack(View view) {
         onBackPressed();
     }
 
+    // Goes back to the MainActivity screen when the phone's back button is pressed
     @Override
     public void onBackPressed() {
         Intent intent = new Intent(this, MainActivity.class);

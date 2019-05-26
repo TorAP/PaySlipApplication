@@ -20,23 +20,26 @@ public class MainActivity extends AppCompatActivity {
 
         }
 
+        // resetting backButtonCount whenever the MainActivity is opened
     @Override
     protected void onResume() {
         super.onResume();
         backButtonCount = 0;
     }
 
+    // opens the InformationMenu screen
     public void InfoMenuButton(View view){
        Intent intent = new Intent(this, InformationMenu.class);
        startActivity(intent);
     }
 
+    // opens the CaseMenu screen
     public void CaseMenuButton(View view){
         Intent intent = new Intent(this, CaseMenu.class);
         startActivity(intent);
     }
 
-
+    // Overrides what happens when the back button on the phone is pressed. Closes the application when the back button has been pressed twice.
     @Override
     public void onBackPressed() {
         if(backButtonCount >= 1)

@@ -19,7 +19,9 @@ import android.widget.Toast;
 public class OverviewCase extends AppCompatActivity {
 
     TextView dragger1, dragger2, dragger3, dropper1, dropper2, dropper3;
+    // tag used to identify if a TextView is a "dragger", meaning containing the text that should be placed on the pay slip
     public static String DRAGGER_TAG = "Drag";
+    // used for identifying the video path for the intro
     public static final String EXTRA_VIDEO_PATH = "VIDEO PATH";
     public final String TOAST_MESSAGE = "Du har lavet en fejl. Prøv igen";
 
