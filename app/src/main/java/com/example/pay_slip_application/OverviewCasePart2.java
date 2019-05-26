@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+// subclass to OverviewCase
 public class OverviewCasePart2 extends OverviewCase {
 
     TextView dragger4, dropper4;
@@ -32,7 +33,7 @@ public class OverviewCasePart2 extends OverviewCase {
         dropper3 = (TextView) findViewById(R.id.dropLoensats);
         dropper4 = (TextView) findViewById(R.id.dropASkat);
 
-
+        // setting every TextView as OnTouchListeners
         dragger1.setOnTouchListener(onTouchListener);
         dragger2.setOnTouchListener(onTouchListener);
         dragger3.setOnTouchListener(onTouchListener);
@@ -42,7 +43,7 @@ public class OverviewCasePart2 extends OverviewCase {
         dropper3.setOnTouchListener(onTouchListener);
         dropper4.setOnTouchListener(onTouchListener);
 
-
+        // setting every TextView as OnDragListeners
         dragger1.setOnDragListener(dragListener);
         dragger2.setOnDragListener(dragListener);
         dragger3.setOnDragListener(dragListener);
@@ -54,17 +55,19 @@ public class OverviewCasePart2 extends OverviewCase {
 
     }
 
-
+    // overrides the method from superclass
     @Override
     public void onClickInfo(View view) {
         super.onClickInfo(view);
     }
 
+    // overrides the method from superclass
     @Override
     public void onClickAlert(View view) {
         super.onClickAlert(view);
     }
 
+    // opens OverviewCaseIntro screen. Transfers the needed video path with the intent
     public void showIntro() {
         Intent intent = new Intent(this, OverviewCaseIntro.class);
         String videoPath = "android.resource://" + getPackageName() + "/" + R.raw.introvideo_part2;
@@ -72,11 +75,13 @@ public class OverviewCasePart2 extends OverviewCase {
         startActivity(intent);
     }
 
+    // overrides the method from superclass
     @Override
     public void onClickIntro(View view) {
         super.onClickIntro(view);
     }
 
+    // if all text is placed correctly with drag and drop the OverviewCasePart3 screen is opened
     @Override
     public void onClickContinue(View view) {
         if (checkIfPlacedCorrect(dropper1, dropper2, dropper3, dropper4)) {
@@ -88,6 +93,7 @@ public class OverviewCasePart2 extends OverviewCase {
         }
     }
 
+    // takes the dropper TextViews as arguments and checks if their value are correct
     public boolean checkIfPlacedCorrect(TextView firstView, TextView secondView, TextView thirdView, TextView fourthView) {
         if (firstView.getText().equals(getResources().getString(R.string.ArbBidrag))
                 && secondView.getText().equals(getResources().getString(R.string.aIndkomstButtonText))

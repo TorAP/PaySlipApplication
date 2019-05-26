@@ -26,21 +26,24 @@ public class OverviewCaseIntro extends AppCompatActivity {
         DisplayMetrics displayMetrics = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
 
+        // puts the width and height of the phone's screen into int variables
         int width = displayMetrics.widthPixels;
         int height = displayMetrics.heightPixels;
-        //set the window to not fill the entire screen
+        //set the window to not fill the entire screen in order to make it look like a popup-screen
         getWindow().setLayout((int)(width*0.8),(int)(height*0.8));
 
 
-
         Intent intent = getIntent();
+        // gets the video path from the intent
         String videoPath = intent.getStringExtra("VIDEO PATH");
 
         introVideo = findViewById(R.id.videoView2);
         Uri uri = Uri.parse(videoPath);
+        // set the VideoView to play the required video
         introVideo.setVideoURI(uri);
         introVideo.start();
 
+        // includes a media controller to make it possible to start/stop or jump in the video
         MediaController mediaController = new MediaController(this);
         introVideo.setMediaController(mediaController);
         mediaController.setAnchorView(introVideo);
@@ -55,6 +58,7 @@ public class OverviewCaseIntro extends AppCompatActivity {
         });
     }
 
+    // closes the screen by opening the previous screen.
     public void closeVideo(View view) {
         super.onBackPressed();
     }
